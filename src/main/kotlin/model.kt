@@ -6,6 +6,6 @@ data class Pub(
     val branch: String,
     val createTS: String,
     val pubService: String,
-    val regularBeers: List<Beer> = emptyList(),
-    val guestBeers: List<Beer> = emptyList()
+    val regularBeers: List<Beer> = listOf(),
+    val guestBeers: List<Beer> = listOf()
 )
