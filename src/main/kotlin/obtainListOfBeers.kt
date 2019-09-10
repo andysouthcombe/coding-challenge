@@ -20,5 +20,5 @@ fun getPubsInArea(inputJson: String): List<Pub> {
 fun obtainListOfBeers(inputJson: String): List<Beer> {
     val pubsInArea = getPubsInArea(inputJson)
     val beersInArea = pubsInArea.flatMap{pub -> pub.regularBeers.map {name -> Beer(name,pub.name,pub.pubService,true)}} + pubsInArea.flatMap{pub -> pub.guestBeers.map {name -> Beer(name,pub.name,pub.pubService,false)}}
-    return beersInArea.sortedBy{it.name}
+    return beersInArea.sortedWith(compareBy({it.name},{it.pubName}))
 }

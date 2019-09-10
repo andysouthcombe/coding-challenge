@@ -97,5 +97,16 @@ class obtainListOfBeersTests {
                                          )
         assertThat(beersInArea).isEqualTo(expectedListOfBeers)
     }
+    @Test
+    fun `should output correctly for multiple pubs and beers`() {
+        val beersInArea = obtainListOfBeers(PubsTestData().twoPubsWithVariousBeers)
+        val expectedListOfBeers = listOf(Beer("Beer1","Pub1","service one",true),
+                                        Beer("Beer1","Pub2","service two",true),
+                                        Beer("Beer2","Pub1","service one",true),
+                                        Beer("Beer3","Pub1","service one",false),
+                                        Beer("Beer4","Pub2","service two",true))
+
+        assertThat(beersInArea).isEqualTo(expectedListOfBeers)
+    }
 
 }
