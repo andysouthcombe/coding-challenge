@@ -47,14 +47,17 @@ class GetPubsInAreasTests {
     @Test
     fun `should handle list of multiple pubs` () {
         val pubsInArea = getPubsInArea(PubsTestData().threePubsWithVariousBeers)
+
+
         assertThat(pubsInArea.size).isEqualTo(3)
-        assertThat(pubsInArea[0].name).isEqualTo("Phoenix")
-        assertThat(pubsInArea[0].id).isEqualTo("16185")
+
+        assertThat(pubsInArea[0].name).isEqualTo("Brass Monkey")
+        assertThat(pubsInArea[0].id).isEqualTo("16187")
         assertThat(pubsInArea[0].branch).isEqualTo("WLD")
-        assertThat(pubsInArea[0].createTS).isEqualTo("2019-05-16 19:31:20")
-        assertThat(pubsInArea[0].pubService).isEqualTo("service one")
+        assertThat(pubsInArea[0].createTS).isEqualTo("2019-05-18 19:31:20")
+        assertThat(pubsInArea[0].pubService).isEqualTo("service three")
         assertThat(pubsInArea[0].regularBeers.size).isEqualTo(2)
-        assertThat(pubsInArea[0].guestBeers.size).isEqualTo(3)
+        assertThat(pubsInArea[0].guestBeers.size).isEqualTo(0)
 
         assertThat(pubsInArea[1].name).isEqualTo("Windsor Castle")
         assertThat(pubsInArea[1].id).isEqualTo("16186")
@@ -64,13 +67,13 @@ class GetPubsInAreasTests {
         assertThat(pubsInArea[1].regularBeers.size).isEqualTo(2)
         assertThat(pubsInArea[1].guestBeers.size).isEqualTo(1)
 
-        assertThat(pubsInArea[2].name).isEqualTo("Brass Monkey")
-        assertThat(pubsInArea[2].id).isEqualTo("16187")
+        assertThat(pubsInArea[2].name).isEqualTo("Phoenix")
+        assertThat(pubsInArea[2].id).isEqualTo("16185")
         assertThat(pubsInArea[2].branch).isEqualTo("WLD")
-        assertThat(pubsInArea[2].createTS).isEqualTo("2019-05-18 19:31:20")
-        assertThat(pubsInArea[2].pubService).isEqualTo("service three")
+        assertThat(pubsInArea[2].createTS).isEqualTo("2019-05-16 19:31:20")
+        assertThat(pubsInArea[2].pubService).isEqualTo("service one")
         assertThat(pubsInArea[2].regularBeers.size).isEqualTo(2)
-        assertThat(pubsInArea[2].guestBeers.size).isEqualTo(0)
+        assertThat(pubsInArea[2].guestBeers.size).isEqualTo(3)
 
 
     }
@@ -107,6 +110,15 @@ class obtainListOfBeersTests {
                                         Beer("Beer4","Pub2","service two",true))
 
         assertThat(beersInArea).isEqualTo(expectedListOfBeers)
+    }
+    @Test
+    fun `should deduplicate where pubs are duplicated`() {
+        val beersInArea = obtainListOfBeers(PubsTestData().duplicatePubs)
+        val expectedListOfBeers = listOf(Beer("Beer1","Pub1","service one",true),
+                                         Beer("Beer4","Pub1","service one",true),
+                                         Beer("Beer5","Pub1","service one",false))
+        assertThat(beersInArea).isEqualTo(expectedListOfBeers)
+
     }
 
 }

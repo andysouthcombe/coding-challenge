@@ -105,4 +105,28 @@ class PubsTestData {
                 "CreateTS":"2019-05-17 19:31:20"}
                 ]
                 }"""
+    val duplicatePubs = """{
+            "Pubs":[
+                {"Name":"Pub1",
+                "RegularBeers":
+                    ["Beer1",
+                    "Beer2"]
+                "GuestBeers":
+                    ["Beer3"] 
+                "PubService":"service one", 
+                "Id":"16185", 
+                "Branch":"WLD", 
+                "CreateTS":"2019-05-16 19:31:20"},
+                {"Name":"Pub1",
+                "RegularBeers":
+                    ["Beer1",
+                    "Beer4"]
+                "GuestBeers":
+                    ["Beer5"] 
+                "PubService":"service one", 
+                "Id":"16185", 
+                "Branch":"WLD", 
+                "CreateTS":"2019-05-17 19:31:20"}
+                ]
+                }"""
 }

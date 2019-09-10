@@ -10,7 +10,7 @@ fun getPubsInArea(inputJson: String): List<Pub> {
     val klaxon = Klaxon().fieldRenamer(renamer)
     return try {
     val pubsInArea = klaxon.parse<PubsInArea>(inputJson)
-        pubsInArea?.pubs ?: listOf()
+        pubsInArea?.pubs?.sortedByDescending {it.createTS}?.distinctBy {Pair(it.name,it.id)} ?: listOf()
     } catch (e: Exception) {
         listOf()
     }
