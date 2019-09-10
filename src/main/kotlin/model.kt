@@ -16,5 +16,3 @@ data class Beer (
     val pubService: String,
     val regularBeer: Boolean
 )
-
-data class BeersInArea (val beers:List<Beer>)

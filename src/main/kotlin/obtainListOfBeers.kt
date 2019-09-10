@@ -12,13 +12,12 @@ fun getPubsInArea(inputJson: String): List<Pub> {
     val pubsInArea = klaxon.parse<PubsInArea>(inputJson)
         pubsInArea?.pubs ?: listOf()
     } catch (e: Exception) {
-        println(e)
         listOf()
     }
 
 }
 
-fun obtainListOfBeers(inputJson: String): BeersInArea {
-    val beersInArea: BeersInArea = BeersInArea(emptyList<Beer>())
-    return beersInArea
+fun obtainListOfBeers(inputJson: String): List<Beer> {
+    val pubsInArea = getPubsInArea(inputJson)
+    return pubsInArea.flatMap{pub -> pub.regularBeers.map {name -> Beer(name,pub.name,pub.pubService,true)}}
 }

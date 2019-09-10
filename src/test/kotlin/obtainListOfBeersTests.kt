@@ -81,10 +81,19 @@ class obtainListOfBeersTests {
     fun `should output empty list for a single pub with no beers` () {
         val beersInArea = obtainListOfBeers(PubsTestData().pubWithNoBeer)
         val emptyListOfBeers: List<Beer> = emptyList()
-        assertThat(beersInArea.beers).isEqualTo(emptyListOfBeers)
+        assertThat(beersInArea).isEqualTo(emptyListOfBeers)
     }
-    //@Test
-    //fun `should output JSON with one pub and one beer for single pub with one beer` () {
-
-    //}
+    @Test
+    fun `should output one pub and one beer for single pub with one beer` () {
+        val beersInArea = obtainListOfBeers(PubsTestData().pubWithOneRegularBeer)
+        val expectedListOfBeers = listOf(Beer("Young#039;s Bitter","Phoenix","https://pubcrawlapi.appspot.com/pub/?v=1&id=16185&branch=WLD&uId=mike&pubs=no&realAle=yes&memberDiscount=no&town=London",true))
+        assertThat(beersInArea).isEqualTo(expectedListOfBeers)
+    }
+    @Test
+    fun `should set regular beer flag to false for guest beers` () {
+        val beersInArea = obtainListOfBeers(PubsTestData().pubWithOneRegularBeerAndOneGuestBeer)
+        val expectedListOfBeers = listOf(Beer("Young#039;s Bitter","Phoenix","https://pubcrawlapi.appspot.com/pub/?v=1&id=16185&branch=WLD&uId=mike&pubs=no&realAle=yes&memberDiscount=no&town=London",true),
+                                         Beer("Doom Bar","Phoenix","https://pubcrawlapi.appspot.com/pub/?v=1&id=16185&branch=WLD&uId=mike&pubs=no&realAle=yes&memberDiscount=no&town=London",false))
+        assertThat(beersInArea).isEqualTo(expectedListOfBeers)
+    }
 }
