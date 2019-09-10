@@ -75,7 +75,6 @@ class GetPubsInAreasTests {
         assertThat(pubsInArea[2].regularBeers.size).isEqualTo(2)
         assertThat(pubsInArea[2].guestBeers.size).isEqualTo(3)
 
-
     }
 }
 
