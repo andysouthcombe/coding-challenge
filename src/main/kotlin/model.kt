@@ -9,3 +9,12 @@ data class Pub(
 )
 
 data class PubsInArea(val pubs:List<Pub>)
+
+data class Beer (
+    val name: String,
+    val pubName: String,
+    val pubService: String,
+    val regularBeer: Boolean
+)
+
+data class BeersInArea (val beers:List<Beer>)

@@ -75,3 +75,11 @@ class GetPubsInAreasTests {
 
     }
 }
+
+class obtainListOfBeersTests {
+    @Test
+    fun `outputs empty JSON for a single pub with no beers` () {
+        val outputJSON = obtainListOfBeers(PubsTestData().pubWithNoBeer)
+        assertThat(outputJSON).isEqualTo("")
+    }
+}

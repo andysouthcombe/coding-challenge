@@ -17,3 +17,7 @@ fun getPubsInArea(inputJson: String): List<Pub> {
     }
 
 }
+
+fun obtainListOfBeers(inputJson: String): String {
+    return ""
+}
