@@ -78,8 +78,13 @@ class GetPubsInAreasTests {
 
 class obtainListOfBeersTests {
     @Test
-    fun `outputs empty JSON for a single pub with no beers` () {
-        val outputJSON = obtainListOfBeers(PubsTestData().pubWithNoBeer)
-        assertThat(outputJSON).isEqualTo("")
+    fun `should output empty list for a single pub with no beers` () {
+        val beersInArea = obtainListOfBeers(PubsTestData().pubWithNoBeer)
+        val emptyListOfBeers: List<Beer> = emptyList()
+        assertThat(beersInArea.beers).isEqualTo(emptyListOfBeers)
     }
+    //@Test
+    //fun `should output JSON with one pub and one beer for single pub with one beer` () {
+
+    //}
 }

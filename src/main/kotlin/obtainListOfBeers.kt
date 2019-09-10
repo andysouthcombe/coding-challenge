@@ -18,6 +18,7 @@ fun getPubsInArea(inputJson: String): List<Pub> {
 
 }
 
-fun obtainListOfBeers(inputJson: String): String {
-    return ""
+fun obtainListOfBeers(inputJson: String): BeersInArea {
+    val beersInArea: BeersInArea = BeersInArea(emptyList<Beer>())
+    return beersInArea
 }
