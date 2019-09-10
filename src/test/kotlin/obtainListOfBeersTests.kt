@@ -32,4 +32,16 @@ class GetPubsInAreasTests {
         assertThat(pubsInArea[0].regularBeers).isEqualTo(listOf("Young#039;s Bitter"))
         assertThat(pubsInArea[0].guestBeers.size).isEqualTo(0)
     }
+    @Test
+    fun `should parse json containing pub with two regular and three guest beers` () {
+        val pubsInArea = getPubsInArea(PubsTestData().pubWithTwoRegularAndThreeGuestBeers)
+        assertThat(pubsInArea.size).isEqualTo(1)
+        assertThat(pubsInArea[0].name).isEqualTo("Phoenix")
+        assertThat(pubsInArea[0].id).isEqualTo("16185")
+        assertThat(pubsInArea[0].branch).isEqualTo("WLD")
+        assertThat(pubsInArea[0].createTS).isEqualTo("2019-05-16 19:31:20")
+        assertThat(pubsInArea[0].pubService).isEqualTo("https://pubcrawlapi.appspot.com/pub/?v=1&id=16185&branch=WLD&uId=mike&pubs=no&realAle=yes&memberDiscount=no&town=London")
+        assertThat(pubsInArea[0].regularBeers).isEqualTo(listOf("Doom Bar", "Otter Ale"))
+        assertThat(pubsInArea[0].guestBeers).isEqualTo(listOf("Westerham Viceroy", "Westerham Summer Perle","Oxted Crystal"))
+    }
 }
