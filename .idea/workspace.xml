@@ -13,8 +13,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/visitAllShops.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="23" selection-start-column="23" selection-end-column="23" />
+            <state relative-caret-position="255">
+              <caret line="15" column="67" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -22,8 +22,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/visitAllShopsTests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="170">
+              <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -34,8 +34,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/staticData.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="119">
+              <caret line="7" column="77" lean-forward="true" selection-start-line="7" selection-start-column="77" selection-end-line="7" selection-end-column="77" />
             </state>
           </provider>
         </entry>
@@ -50,6 +50,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -110,7 +111,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/Programs/Git/bin/git.exe" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -174,18 +176,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_visitAllShopsTests_VisitAllShopsTests - 2019.10.04 at 15h 29m 35s.xml">
-      <configuration name="Unittests for visitAllShopsTests.VisitAllShopsTests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_visitAllShopsTests_VisitAllShopsTests - 2019.10.04 at 15h 30m 18s.xml">
-      <configuration name="Unittests for visitAllShopsTests.VisitAllShopsTests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_visitAllShopsTests_VisitAllShopsTests - 2019.10.04 at 15h 30m 34s.xml">
-      <configuration name="Unittests for visitAllShopsTests.VisitAllShopsTests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_visitAllShopsTests_FindNextBranchTests - 2019.10.04 at 15h 35m 50s.xml">
-      <configuration name="Unittests for visitAllShopsTests.FindNextBranchTests" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_for_visitAllShopsTests_FindNextBranchTests - 2019.10.04 at 15h 38m 21s.xml">
       <configuration name="Unittests for visitAllShopsTests.FindNextBranchTests" configurationId="tests" />
     </history-entry>
@@ -202,6 +192,18 @@
       <configuration name="Unittests for visitAllShopsTests.FindNextBranchTests" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittests_for_visitAllShopsTests_FindNextBranchTests - 2019.10.04 at 16h 07m 17s.xml">
+      <configuration name="Unittests for visitAllShopsTests.FindNextBranchTests" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_visitAllShopsTests_FindNextBranchTests - 2019.10.04 at 16h 47m 13s.xml">
+      <configuration name="Unittests for visitAllShopsTests.FindNextBranchTests" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_visitAllShopsTests_FindNextBranchTests - 2019.10.04 at 16h 48m 06s.xml">
+      <configuration name="Unittests for visitAllShopsTests.FindNextBranchTests" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_visitAllShopsTests_FindNextBranchTests - 2019.10.04 at 16h 48m 34s.xml">
+      <configuration name="Unittests for visitAllShopsTests.FindNextBranchTests" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_visitAllShopsTests_FindNextBranchTests - 2019.10.04 at 16h 56m 16s.xml">
       <configuration name="Unittests for visitAllShopsTests.FindNextBranchTests" configurationId="tests" />
     </history-entry>
   </component>
@@ -234,22 +236,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/staticData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="119">
+          <caret line="7" column="77" lean-forward="true" selection-start-line="7" selection-start-column="77" selection-end-line="7" selection-end-column="77" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/visitAllShops.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="23" selection-start-column="23" selection-end-column="23" />
+        <state relative-caret-position="255">
+          <caret line="15" column="67" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/visitAllShopsTests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="170">
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

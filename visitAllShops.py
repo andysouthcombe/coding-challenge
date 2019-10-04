@@ -1,21 +1,33 @@
 from geopy import distance
 
 
-def visit_all_shops(shop_list):
+def visit_all_shops(shop_string):
+    journey_log = []
     print("hello")
 
 
 def find_next_shop(current_shop, remaining_shops):
-    current_long = current_shop[2]
-    current_lat = current_shop[3]
+    current_long = current_shop.longitude
+    current_lat = current_shop.latitude
     distances_from_current_shop = []
 
     for s in remaining_shops:
-        shop_long = s[2]
-        shop_lat = s[3]
-        distance_from_start = distance.geodesic((current_long, current_lat), (shop_long, shop_lat)).miles
-        distances_from_current_shop.append([s[0], s[1], s[2], s[3], distance_from_start])
+        distance_from_start = distance.geodesic((current_long, current_lat), (s.longitude, s.latitude)).miles
+        distances_from_current_shop.append([s, distance_from_start])
 
-    distances_from_current_shop.sort(key=lambda x: x[4])
+    distances_from_current_shop.sort(key=lambda x: x[1])
 
     return distances_from_current_shop[0]
+
+
+def load_shop_string_to_list(shop_string):
+
+    return 1
+
+
+class ShopLocation:
+    def __init__(self, name, postcode, longitude, latitude):
+        self.name = name
+        self.postcode = postcode
+        self.longitude = longitude
+        self.latitude = latitude
