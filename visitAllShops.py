@@ -4,6 +4,7 @@ from model import ShopLocation
 from model import Journey
 import exceptions
 from staticData import ShopData
+from listOfBranches import ListOfBranches
 
 
 def visit_all_shops(shop_string):
@@ -13,8 +14,13 @@ def visit_all_shops(shop_string):
     list_of_shops_to_visit.pop(0)
     while len(list_of_shops_to_visit) > 0:
         (start_location, start_time, current_day) = get_current_position_and_time(itinerary)
-        remaining_shops_sorted_by_distance = return_list_of_shops_sorted_by_distance(start_location,
-                                                                                     list_of_shops_to_visit)
+        try:
+            remaining_shops_sorted_by_distance = return_list_of_shops_sorted_by_distance(start_location,
+                                                                                         list_of_shops_to_visit)
+        except exceptions.NextShopTooFar:
+            "Stuck at %s" % start_location.name
+            break
+
         arrival_location = remaining_shops_sorted_by_distance[0][0]
 
         journey_distance = remaining_shops_sorted_by_distance[0][1]
@@ -67,13 +73,9 @@ def calculate_journey_time_in_seconds(distance_in_miles):
 
 
 def add_on_journey_time(start_time, start_day, journey_time):
-    final_day = start_day + int((start_time + journey_time) / Parameters.max_journey_time_in_day)
-    if final_day > start_day:
-        finish_time = journey_time
-    else:
-        finish_time = start_time + journey_time
-
-    return final_day, finish_time
+    total_time = start_time + journey_time
+    days_to_add, new_time = divmod(total_time, Parameters.max_journey_time_in_day)
+    return start_day + days_to_add, new_time
 
 
 def get_current_position_and_time(itinerary):
@@ -82,7 +84,9 @@ def get_current_position_and_time(itinerary):
     current_day = itinerary[-1].day
     return current_position, current_time, current_day
 
+
 if __name__ == "__main__":
-    journey_list = visit_all_shops(ShopData.sample_input_string)
+    journey_list = visit_all_shops(ListOfBranches.list_of_branches)
+    print("day,start_location,start_time,arrival_location,arrival_time,journey_distance")
     for j in journey_list:
         print(j.to_string())

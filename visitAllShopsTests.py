@@ -72,7 +72,7 @@ class AddOnJourneyTimeTests(unittest.TestCase):
         next_trip = return_list_of_shops_sorted_by_distance(start_location, [end_location])[0]
         start_time = Parameters.max_journey_time_in_day - 700
         self.assertEqual(add_on_journey_time(start_time, 3, next_trip[2]),
-                         (4, Parameters.head_office_to_brent_cross_travel_time))
+                         (4, Parameters.head_office_to_brent_cross_travel_time-700))
 
 
 class GetCurrentPositionAndTimeTests(unittest.TestCase):
