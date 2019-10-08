@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27385196-24f2-48e6-9078-46c1f83b6e6f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/staticData.py" beforeDir="false" afterPath="$PROJECT_DIR$/staticData.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/visitAllShops.py" beforeDir="false" afterPath="$PROJECT_DIR$/visitAllShops.py" afterDir="false" />
@@ -15,20 +16,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/visitAllShops.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="31" column="48" lean-forward="true" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
+            <state relative-caret-position="170">
+              <caret line="10" column="107" selection-start-line="10" selection-start-column="107" selection-end-line="10" selection-end-column="107" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/visitAllShopsTests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+            <state relative-caret-position="255">
+              <caret line="15" column="105" selection-start-line="15" selection-start-column="105" selection-end-line="15" selection-end-column="105" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -37,10 +41,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/staticData.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="200" selection-start-line="8" selection-start-column="200" selection-end-line="8" selection-end-column="200" />
+            <state relative-caret-position="204">
+              <caret line="12" column="39" lean-forward="true" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -63,8 +76,9 @@
       <list>
         <option value="$PROJECT_DIR$/venv/shop_data.py" />
         <option value="$PROJECT_DIR$/staticData.py" />
-        <option value="$PROJECT_DIR$/visitAllShopsTests.py" />
+        <option value="$PROJECT_DIR$/model.py" />
         <option value="$PROJECT_DIR$/visitAllShops.py" />
+        <option value="$PROJECT_DIR$/visitAllShopsTests.py" />
       </list>
     </option>
   </component>
@@ -131,7 +145,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for visitAllShopsTests.LoadShopStringToListTests">
+  <component name="RunManager" selected="Python tests.Unittests for visitAllShopsTests.VisitAllShopsTest">
     <configuration name="Unittests for visitAllShopsTests.FindNextBranchTests" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="coding-challenge-13" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -174,6 +188,20 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Unittests for visitAllShopsTests.VisitAllShopsTest" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="coding-challenge-13" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;visitAllShopsTests.VisitAllShopsTest&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Unittests for visitAllShopsTests.VisitAllShopsTests" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="coding-challenge-13" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -190,6 +218,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests for visitAllShopsTests.VisitAllShopsTest" />
         <item itemvalue="Python tests.Unittests for visitAllShopsTests.LoadShopStringToListTests" />
         <item itemvalue="Python tests.Unittests for visitAllShopsTests.FindNextBranchTests" />
         <item itemvalue="Python tests.Unittests for visitAllShopsTests.LoadShopStringToListTests.test_" />
@@ -211,35 +240,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_visitAllShopsTests_LoadShopStringToListTests - 2019.10.08 at 08h 34m 06s.xml">
+    <history-entry file="Unittests_for_visitAllShopsTests_VisitAllShopsTest - 2019.10.08 at 10h 10m 43s.xml">
+      <configuration name="Unittests for visitAllShopsTests.VisitAllShopsTest" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_visitAllShopsTests_VisitAllShopsTest - 2019.10.08 at 10h 12m 28s.xml">
+      <configuration name="Unittests for visitAllShopsTests.VisitAllShopsTest" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_visitAllShopsTests_VisitAllShopsTest - 2019.10.08 at 10h 14m 58s.xml">
+      <configuration name="Unittests for visitAllShopsTests.VisitAllShopsTest" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_visitAllShopsTests_VisitAllShopsTest - 2019.10.08 at 10h 15m 31s.xml">
+      <configuration name="Unittests for visitAllShopsTests.VisitAllShopsTest" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_visitAllShopsTests_LoadShopStringToListTests - 2019.10.08 at 10h 26m 04s.xml">
       <configuration name="Unittests for visitAllShopsTests.LoadShopStringToListTests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_visitAllShopsTests_LoadShopStringToListTests_test_ - 2019.10.08 at 08h 34m 14s.xml">
-      <configuration name="Unittests for visitAllShopsTests.LoadShopStringToListTests.test_" configurationId="tests" />
+    <history-entry file="Unittests_for_visitAllShopsTests_VisitAllShopsTest - 2019.10.08 at 10h 26m 08s.xml">
+      <configuration name="Unittests for visitAllShopsTests.VisitAllShopsTest" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_visitAllShopsTests_LoadShopStringToListTests - 2019.10.08 at 08h 52m 59s.xml">
-      <configuration name="Unittests for visitAllShopsTests.LoadShopStringToListTests" configurationId="tests" />
+    <history-entry file="Unittests_for_visitAllShopsTests_VisitAllShopsTest - 2019.10.08 at 10h 28m 30s.xml">
+      <configuration name="Unittests for visitAllShopsTests.VisitAllShopsTest" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_visitAllShopsTests_LoadShopStringToListTests - 2019.10.08 at 08h 56m 24s.xml">
-      <configuration name="Unittests for visitAllShopsTests.LoadShopStringToListTests" configurationId="tests" />
+    <history-entry file="Unittests_for_visitAllShopsTests_VisitAllShopsTest - 2019.10.08 at 10h 29m 12s.xml">
+      <configuration name="Unittests for visitAllShopsTests.VisitAllShopsTest" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_visitAllShopsTests_FindNextBranchTests - 2019.10.08 at 08h 57m 42s.xml">
-      <configuration name="Unittests for visitAllShopsTests.FindNextBranchTests" configurationId="tests" />
+    <history-entry file="Unittests_for_visitAllShopsTests_VisitAllShopsTest - 2019.10.08 at 10h 29m 47s.xml">
+      <configuration name="Unittests for visitAllShopsTests.VisitAllShopsTest" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_visitAllShopsTests_LoadShopStringToListTests - 2019.10.08 at 08h 57m 46s.xml">
-      <configuration name="Unittests for visitAllShopsTests.LoadShopStringToListTests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_visitAllShopsTests_FindNextBranchTests - 2019.10.08 at 08h 58m 52s.xml">
-      <configuration name="Unittests for visitAllShopsTests.FindNextBranchTests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_visitAllShopsTests_LoadShopStringToListTests - 2019.10.08 at 08h 58m 56s.xml">
-      <configuration name="Unittests for visitAllShopsTests.LoadShopStringToListTests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_visitAllShopsTests_FindNextBranchTests - 2019.10.08 at 08h 59m 31s.xml">
-      <configuration name="Unittests for visitAllShopsTests.FindNextBranchTests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_visitAllShopsTests_LoadShopStringToListTests - 2019.10.08 at 08h 59m 38s.xml">
-      <configuration name="Unittests for visitAllShopsTests.LoadShopStringToListTests" configurationId="tests" />
+    <history-entry file="Unittests_for_visitAllShopsTests_VisitAllShopsTest - 2019.10.08 at 10h 34m 30s.xml">
+      <configuration name="Unittests for visitAllShopsTests.VisitAllShopsTest" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -269,25 +298,35 @@
     <entry file="file://$PROJECT_DIR$/venv/shop_data.py" />
     <entry file="file://$PROJECT_DIR$/staticData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="200" selection-start-line="8" selection-start-column="200" selection-end-line="8" selection-end-column="200" />
+        <state relative-caret-position="204">
+          <caret line="12" column="39" lean-forward="true" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/visitAllShopsTests.py">
+    <entry file="file://$PROJECT_DIR$/model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="272">
+          <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/visitAllShops.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="31" column="48" lean-forward="true" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
+        <state relative-caret-position="170">
+          <caret line="10" column="107" selection-start-line="10" selection-start-column="107" selection-end-line="10" selection-end-column="107" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/visitAllShopsTests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="105" selection-start-line="15" selection-start-column="105" selection-end-line="15" selection-end-column="105" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
