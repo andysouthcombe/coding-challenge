@@ -16,4 +16,5 @@ class Parameters:
     one_hour_in_seconds = 60 * 60
     speed_in_mph = 30
     max_journey_time_in_day = 10 * one_hour_in_seconds
+    start_hour = 8
     head_office_to_brent_cross_travel_time = 949
