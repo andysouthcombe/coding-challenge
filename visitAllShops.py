@@ -3,11 +3,13 @@ from staticData import Parameters
 from model import ShopLocation
 from model import Journey
 import exceptions
+from staticData import ShopData
 
 
 def visit_all_shops(shop_string):
     list_of_shops_to_visit = load_shop_string_to_list(shop_string)
-    itinerary = [Journey(1, list_of_shops_to_visit[0], 0, list_of_shops_to_visit[0], Parameters.visit_length_in_seconds, 0)]
+    itinerary = [
+        Journey(1, list_of_shops_to_visit[0], 0, list_of_shops_to_visit[0], Parameters.visit_length_in_seconds, 0)]
     list_of_shops_to_visit.pop(0)
     while len(list_of_shops_to_visit) > 0:
         (start_location, start_time, current_day) = get_current_position_and_time(itinerary)
@@ -79,3 +81,8 @@ def get_current_position_and_time(itinerary):
     current_time = itinerary[-1].arrival_time
     current_day = itinerary[-1].day
     return current_position, current_time, current_day
+
+if __name__ == "__main__":
+    journey_list = visit_all_shops(ShopData.sample_input_string)
+    for j in journey_list:
+        print(j.to_string())

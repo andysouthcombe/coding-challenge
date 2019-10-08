@@ -2,16 +2,20 @@ import unittest
 from staticData import *
 from visitAllShops import *
 import exceptions
+from formatSecondsAsTime import format_seconds_to_time
 
 
 class FindNextBranchTests(unittest.TestCase):
 
     def test_find_next_branch_returns_next_shop_with_one_branch(self):
-        self.assertEqual(return_list_of_shops_sorted_by_distance(ShopData.jl_head_office, [ShopData.peter_jones])[0][0].name, "Peter Jones")
+        self.assertEqual(
+            return_list_of_shops_sorted_by_distance(ShopData.jl_head_office, [ShopData.peter_jones])[0][0].name,
+            "Peter Jones")
 
     def test_find_next_branch_returns_nearest_shop_with_two_branches_to_visit(self):
         two_branch_list = [ShopData.abergavenny, ShopData.brent_cross]
-        self.assertEqual(return_list_of_shops_sorted_by_distance(ShopData.jl_head_office, two_branch_list)[0][0].name, "Brent Cross")
+        self.assertEqual(return_list_of_shops_sorted_by_distance(ShopData.jl_head_office, two_branch_list)[0][0].name,
+                         "Brent Cross")
 
     def test_throws_exception_if_next_shop_unreachable(self):
         with self.assertRaises(exceptions.NextShopTooFar):
@@ -76,3 +80,8 @@ class GetCurrentPositionAndTimeTests(unittest.TestCase):
         itinerary = [Journey(1, ShopData.jl_head_office, 0, ShopData.jl_aberdeen, 10, 100)]
         itinerary.append(Journey(2, ShopData.jl_aberdeen, 0, ShopData.jl_exeter, 300, 400))
         self.assertEqual(get_current_position_and_time(itinerary), (ShopData.jl_exeter, 300, 2))
+
+
+class FormatSecondsAsTimeTests(unittest.TestCase):
+    def test_formats_seconds_to_seconds(self):
+        self.assertEqual(format_seconds_to_time(53), "00:00:53")
