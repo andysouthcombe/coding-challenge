@@ -21,8 +21,17 @@ def find_next_shop(current_shop, remaining_shops):
 
 
 def load_shop_string_to_list(shop_string):
+    raw_list = shop_string.split(",")
+    num_shops = int(len(raw_list) / 4)
+    list_of_shops_to_visit = []
 
-    return 1
+    for s in range(1, num_shops+1):
+        shop_name = raw_list[0 + (s - 1) * 4]
+        shop_postcode = raw_list[1 + (s - 1) * 4]
+        shop_longitude = raw_list[2 + (s - 1) * 4]
+        shop_latitude = raw_list[3 + (s - 1) * 4]
+        list_of_shops_to_visit.append(ShopLocation(shop_name,shop_postcode,shop_longitude,shop_latitude))
+    return list_of_shops_to_visit
 
 
 class ShopLocation:
