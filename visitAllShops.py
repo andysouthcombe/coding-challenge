@@ -2,6 +2,7 @@ from geopy import distance
 from staticData import Parameters
 from model import ShopLocation
 from model import Journey
+import exceptions
 
 
 def visit_all_shops(shop_string):
@@ -19,9 +20,12 @@ def find_next_shop(current_shop, remaining_shops):
 
     for s in remaining_shops:
         distance_from_start = distance.geodesic((current_long, current_lat), (s.longitude, s.latitude)).miles
-        distances_from_current_shop.append([s, distance_from_start])
+        distances_from_current_shop.append(
+            [s, distance_from_start, calculate_journey_time_in_seconds(distance_from_start)])
 
     distances_from_current_shop.sort(key=lambda x: x[1])
+    if distances_from_current_shop[0][2] > Parameters.max_journey_time_in_day:
+        raise exceptions.NextShopTooFar
 
     return distances_from_current_shop[0]
 
@@ -41,4 +45,8 @@ def load_shop_string_to_list(shop_string):
 
 
 def calculate_journey_time_in_seconds(distance_in_miles):
-    return (distance_in_miles / Parameters.speed_in_mph) * Parameters.one_hour_in_seconds
+    return int((distance_in_miles / Parameters.speed_in_mph) * Parameters.one_hour_in_seconds)
+
+
+def add_on_journey_time(start_time, journey_time):
+    return start_time + journey_time
