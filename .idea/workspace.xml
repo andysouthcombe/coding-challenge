@@ -13,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/visitAllShopsTests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="89" column="64" lean-forward="true" selection-start-line="89" selection-start-column="64" selection-end-line="89" selection-end-column="64" />
+            <state relative-caret-position="317">
+              <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -64,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/formatSecondsAsTime.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+            <state relative-caret-position="119">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -270,18 +270,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_visitAllShopsTests_FindNextBranchTests - 2019.10.08 at 15h 02m 01s.xml">
-      <configuration name="Unittests for visitAllShopsTests.FindNextBranchTests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_visitAllShopsTests_py - 2019.10.08 at 15h 02m 09s.xml">
-      <configuration name="Unittests in visitAllShopsTests.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_visitAllShopsTests_VisitAllShopsTest_test_records_one_shop_to_visit - 2019.10.08 at 15h 02m 48s.xml">
-      <configuration name="Unittests for visitAllShopsTests.VisitAllShopsTest.test_records_one_shop_to_visit" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_visitAllShopsTests_VisitAllShopsTest - 2019.10.08 at 15h 03m 38s.xml">
-      <configuration name="Unittests for visitAllShopsTests.VisitAllShopsTest" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_in_visitAllShopsTests_py - 2019.10.08 at 15h 55m 35s.xml">
       <configuration name="Unittests in visitAllShopsTests.py" configurationId="tests" />
     </history-entry>
@@ -298,6 +286,18 @@
       <configuration name="Unittests for visitAllShopsTests.FormatSecondsAsTimeTests" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittests_for_visitAllShopsTests_FormatSecondsAsTimeTests - 2019.10.08 at 16h 11m 56s.xml">
+      <configuration name="Unittests for visitAllShopsTests.FormatSecondsAsTimeTests" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_visitAllShopsTests_FormatSecondsAsTimeTests - 2019.10.08 at 16h 13m 06s.xml">
+      <configuration name="Unittests for visitAllShopsTests.FormatSecondsAsTimeTests" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_visitAllShopsTests_FormatSecondsAsTimeTests - 2019.10.08 at 16h 13m 28s.xml">
+      <configuration name="Unittests for visitAllShopsTests.FormatSecondsAsTimeTests" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_visitAllShopsTests_FormatSecondsAsTimeTests - 2019.10.08 at 16h 16m 26s.xml">
+      <configuration name="Unittests for visitAllShopsTests.FormatSecondsAsTimeTests" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_visitAllShopsTests_FormatSecondsAsTimeTests - 2019.10.08 at 16h 17m 39s.xml">
       <configuration name="Unittests for visitAllShopsTests.FormatSecondsAsTimeTests" configurationId="tests" />
     </history-entry>
   </component>
@@ -385,20 +385,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/visitAllShopsTests.py">
+    <entry file="file://$PROJECT_DIR$/formatSecondsAsTime.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="89" column="64" lean-forward="true" selection-start-line="89" selection-start-column="64" selection-end-line="89" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/formatSecondsAsTime.py">
+    <entry file="file://$PROJECT_DIR$/visitAllShopsTests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        <state relative-caret-position="317">
+          <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

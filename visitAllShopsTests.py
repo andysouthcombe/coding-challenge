@@ -89,4 +89,5 @@ class FormatSecondsAsTimeTests(unittest.TestCase):
     def test_formats_seconds_to_minutes_and_seconds(self):
         self.assertEqual(format_seconds_to_time(62), "00:01:02")
 
-    
+    def test_formats_seconds_to_hours_minutes_and_seconds(self):
+        self.assertEqual(format_seconds_to_time(8412), "02:20:12")
