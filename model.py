@@ -10,7 +10,8 @@ class ShopLocation:
 
 
 class Journey:
-    def __init__(self, start_location, start_time, arrival_location, arrival_time , journey_distance):
+    def __init__(self, day, start_location, start_time, arrival_location, arrival_time, journey_distance):
+        self.day = day
         self.start_location = start_location
         self.start_time = start_time
         self.arrival_location = arrival_location

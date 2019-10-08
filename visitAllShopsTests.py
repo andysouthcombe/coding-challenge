@@ -1,12 +1,7 @@
 import unittest
-from staticData import ShopData
-from visitAllShops import find_next_shop
-from visitAllShops import load_shop_string_to_list
-from visitAllShops import visit_all_shops
-from staticData import Parameters
-from visitAllShops import calculate_journey_time_in_seconds
+from staticData import *
+from visitAllShops import *
 import exceptions
-from visitAllShops import add_on_journey_time
 
 
 class FindNextBranchTests(unittest.TestCase):
@@ -35,6 +30,7 @@ class LoadShopStringToListTests(unittest.TestCase):
 class VisitAllShopsTest(unittest.TestCase):
     def test_records_starting_journey(self):
         returned_list = visit_all_shops(ShopData.jl_head_office.to_string())
+        self.assertEqual(returned_list[0].day, 1)
         self.assertEqual(returned_list[0].start_location.name, ShopData.jl_head_office.name)
         self.assertEqual(returned_list[0].start_time, 0)
         self.assertEqual(returned_list[0].arrival_location.name, ShopData.jl_head_office.name)

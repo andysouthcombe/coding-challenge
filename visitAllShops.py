@@ -9,7 +9,7 @@ def visit_all_shops(shop_string):
     list_of_shops_to_visit = load_shop_string_to_list(shop_string)
     itinerary = []
     itinerary.append(
-        Journey(list_of_shops_to_visit[0], 0, list_of_shops_to_visit[0], Parameters.visit_length_in_seconds, 0))
+        Journey(1, list_of_shops_to_visit[0], 0, list_of_shops_to_visit[0], Parameters.visit_length_in_seconds, 0))
     return itinerary
 
 

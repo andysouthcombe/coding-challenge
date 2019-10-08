@@ -152,7 +152,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for visitAllShopsTests.AddOnJourneyTimeTests">
+  <component name="RunManager" selected="Python tests.Unittests in visitAllShopsTests.py">
     <configuration name="Unittests for visitAllShopsTests.AddOnJourneyTimeTests" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="coding-challenge-13" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -225,9 +225,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests in visitAllShopsTests.py" />
         <item itemvalue="Python tests.Unittests for visitAllShopsTests.AddOnJourneyTimeTests" />
         <item itemvalue="Python tests.Unittests for visitAllShopsTests.AddOnJourneyTimeTests.test_if_journey_finishes_after_8pm_starts_next_day" />
-        <item itemvalue="Python tests.Unittests in visitAllShopsTests.py" />
         <item itemvalue="Python tests.Unittests for visitAllShopsTests.FindNextBranchTests" />
         <item itemvalue="Python tests.Unittests for visitAllShopsTests.FindNextBranchTests.test_throws_exception_if_next_shop_unreachable" />
       </list>
