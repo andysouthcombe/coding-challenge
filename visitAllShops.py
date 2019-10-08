@@ -48,5 +48,11 @@ def calculate_journey_time_in_seconds(distance_in_miles):
     return int((distance_in_miles / Parameters.speed_in_mph) * Parameters.one_hour_in_seconds)
 
 
-def add_on_journey_time(start_time, journey_time):
-    return start_time + journey_time
+def add_on_journey_time(start_time, start_day, journey_time):
+    final_day = start_day + int((start_time + journey_time) / Parameters.max_journey_time_in_day)
+    if final_day > start_day:
+        finish_time = journey_time
+    else:
+        finish_time = start_time + journey_time
+
+    return final_day, finish_time

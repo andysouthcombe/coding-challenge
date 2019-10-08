@@ -54,4 +54,11 @@ class AddOnJourneyTimeTests(unittest.TestCase):
         end_location = ShopData.brent_cross
         next_trip = find_next_shop(start_location, [end_location])
         start_time = 0
-        self.assertEqual(add_on_journey_time(start_time, next_trip[2]), 949)
+        self.assertEqual(add_on_journey_time(start_time, 1, next_trip[2]), (1, 949))
+
+    def test_if_journey_finishes_after_8pm_starts_next_day(self):
+        start_location = ShopData.jl_head_office
+        end_location = ShopData.brent_cross
+        next_trip = find_next_shop(start_location, [end_location])
+        start_time = Parameters.max_journey_time_in_day - 700
+        self.assertEqual(add_on_journey_time(start_time, 3, next_trip[2]), (4, 949))
