@@ -9,5 +9,9 @@ class ShopData:
     sample_input_string = "Abergavenny,NP7 9LL,-3.028245,51.818294,Abergavenny Petrol Station,NP7 9LL,-3.028245,51.818294,Abingdon,OX14 3HL,-1.279705,51.672083,Addlestone,KT15 2GL,-0.491506,51.370886"
 
 
-class TimeUnits:
-    twenty_minutes_in_seconds = 20 * 60
+class Parameters:
+    visit_length_in_seconds = 20 * 60
+    one_hour_in_seconds = 60 * 60
+    speed_in_mph = 30
+
+

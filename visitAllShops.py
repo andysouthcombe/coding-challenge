@@ -1,5 +1,5 @@
 from geopy import distance
-from staticData import TimeUnits
+from staticData import Parameters
 from model import ShopLocation
 from model import Journey
 
@@ -8,7 +8,7 @@ def visit_all_shops(shop_string):
     list_of_shops_to_visit = load_shop_string_to_list(shop_string)
     itinerary = []
     itinerary.append(
-        Journey(list_of_shops_to_visit[0], 0, list_of_shops_to_visit[0],TimeUnits.twenty_minutes_in_seconds, 0))
+        Journey(list_of_shops_to_visit[0], 0, list_of_shops_to_visit[0], Parameters.visit_length_in_seconds, 0))
     return itinerary
 
 
@@ -38,3 +38,7 @@ def load_shop_string_to_list(shop_string):
         shop_latitude = raw_list[3 + (s - 1) * 4]
         list_of_shops_to_visit.append(ShopLocation(shop_name, shop_postcode, shop_longitude, shop_latitude))
     return list_of_shops_to_visit
+
+
+def calculate_journey_time_in_seconds(distance_in_miles):
+    return (distance_in_miles / Parameters.speed_in_mph) * Parameters.one_hour_in_seconds

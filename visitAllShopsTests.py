@@ -3,7 +3,8 @@ from staticData import ShopData
 from visitAllShops import find_next_shop
 from visitAllShops import load_shop_string_to_list
 from visitAllShops import visit_all_shops
-from staticData import TimeUnits
+from staticData import Parameters
+from visitAllShops import calculate_journey_time_in_seconds
 
 
 class FindNextBranchTests(unittest.TestCase):
@@ -31,5 +32,11 @@ class VisitAllShopsTest(unittest.TestCase):
         self.assertEqual(returned_list[0].start_location.name, ShopData.jl_head_office.name)
         self.assertEqual(returned_list[0].start_time, 0)
         self.assertEqual(returned_list[0].arrival_location.name, ShopData.jl_head_office.name)
-        self.assertEqual(returned_list[0].arrival_time, TimeUnits.twenty_minutes_in_seconds)
+        self.assertEqual(returned_list[0].arrival_time, Parameters.visit_length_in_seconds)
         self.assertEqual(returned_list[0].journey_distance, 0)
+
+
+class CalculateJourneyTimeTests(unittest.TestCase):
+    def test_calculate_journey_times(self):
+        self.assertEqual(calculate_journey_time_in_seconds(30), Parameters.one_hour_in_seconds)
+        self.assertEqual(calculate_journey_time_in_seconds(29.4), 3528)
