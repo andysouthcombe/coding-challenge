@@ -85,3 +85,8 @@ class GetCurrentPositionAndTimeTests(unittest.TestCase):
 class FormatSecondsAsTimeTests(unittest.TestCase):
     def test_formats_seconds_to_seconds(self):
         self.assertEqual(format_seconds_to_time(53), "00:00:53")
+
+    def test_formats_seconds_to_minutes_and_seconds(self):
+        self.assertEqual(format_seconds_to_time(62), "00:01:02")
+
+    

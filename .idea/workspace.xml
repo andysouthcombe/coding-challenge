@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27385196-24f2-48e6-9078-46c1f83b6e6f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/formatSecondsAsTime.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/visitAllShops.py" beforeDir="false" afterPath="$PROJECT_DIR$/visitAllShops.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/formatSecondsAsTime.py" beforeDir="false" afterPath="$PROJECT_DIR$/formatSecondsAsTime.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/visitAllShopsTests.py" beforeDir="false" afterPath="$PROJECT_DIR$/visitAllShopsTests.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,8 +16,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/visitAllShopsTests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="86" column="52" selection-start-line="86" selection-start-column="52" selection-end-line="86" selection-end-column="52" />
+            <state relative-caret-position="521">
+              <caret line="89" column="64" lean-forward="true" selection-start-line="89" selection-start-column="64" selection-end-line="89" selection-end-column="64" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -70,8 +67,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/formatSecondsAsTime.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+            <state relative-caret-position="102">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -273,18 +270,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_visitAllShopsTests_py - 2019.10.08 at 14h 45m 52s.xml">
-      <configuration name="Unittests in visitAllShopsTests.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_visitAllShopsTests_py - 2019.10.08 at 14h 46m 12s.xml">
-      <configuration name="Unittests in visitAllShopsTests.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_visitAllShopsTests_py - 2019.10.08 at 14h 46m 38s.xml">
-      <configuration name="Unittests in visitAllShopsTests.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_visitAllShopsTests_py - 2019.10.08 at 14h 46m 55s.xml">
-      <configuration name="Unittests in visitAllShopsTests.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_for_visitAllShopsTests_FindNextBranchTests - 2019.10.08 at 15h 02m 01s.xml">
       <configuration name="Unittests for visitAllShopsTests.FindNextBranchTests" configurationId="tests" />
     </history-entry>
@@ -301,6 +286,18 @@
       <configuration name="Unittests in visitAllShopsTests.py" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittests_for_visitAllShopsTests_FormatSecondsAsTimeTests - 2019.10.08 at 16h 07m 39s.xml">
+      <configuration name="Unittests for visitAllShopsTests.FormatSecondsAsTimeTests" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_visitAllShopsTests_FormatSecondsAsTimeTests - 2019.10.08 at 16h 08m 56s.xml">
+      <configuration name="Unittests for visitAllShopsTests.FormatSecondsAsTimeTests" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_visitAllShopsTests_FormatSecondsAsTimeTests - 2019.10.08 at 16h 10m 31s.xml">
+      <configuration name="Unittests for visitAllShopsTests.FormatSecondsAsTimeTests" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_visitAllShopsTests_FormatSecondsAsTimeTests - 2019.10.08 at 16h 11m 38s.xml">
+      <configuration name="Unittests for visitAllShopsTests.FormatSecondsAsTimeTests" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_visitAllShopsTests_FormatSecondsAsTimeTests - 2019.10.08 at 16h 11m 56s.xml">
       <configuration name="Unittests for visitAllShopsTests.FormatSecondsAsTimeTests" configurationId="tests" />
     </history-entry>
   </component>
@@ -390,8 +387,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/visitAllShopsTests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="86" column="52" selection-start-line="86" selection-start-column="52" selection-end-line="86" selection-end-column="52" />
+        <state relative-caret-position="521">
+          <caret line="89" column="64" lean-forward="true" selection-start-line="89" selection-start-column="64" selection-end-line="89" selection-end-column="64" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
@@ -400,8 +397,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/formatSecondsAsTime.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+        <state relative-caret-position="102">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
         </state>
       </provider>
     </entry>
