@@ -6,7 +6,7 @@ class ShopLocation:
         self.latitude = latitude
 
     def to_string(self):
-        return "%s,%s,%d,%d" % (self.name, self.postcode, self.longitude, self.latitude)
+        return "%s,%s,%s,%s" % (self.name, self.postcode, self.longitude, self.latitude)
 
 
 class Journey:

@@ -7,13 +7,29 @@ import exceptions
 
 def visit_all_shops(shop_string):
     list_of_shops_to_visit = load_shop_string_to_list(shop_string)
-    itinerary = []
-    itinerary.append(
-        Journey(1, list_of_shops_to_visit[0], 0, list_of_shops_to_visit[0], Parameters.visit_length_in_seconds, 0))
+    itinerary = [Journey(1, list_of_shops_to_visit[0], 0, list_of_shops_to_visit[0], Parameters.visit_length_in_seconds, 0)]
+    list_of_shops_to_visit.pop(0)
+    while len(list_of_shops_to_visit) > 0:
+        (start_location, start_time, current_day) = get_current_position_and_time(itinerary)
+        remaining_shops_sorted_by_distance = return_list_of_shops_sorted_by_distance(start_location,
+                                                                                     list_of_shops_to_visit)
+        arrival_location = remaining_shops_sorted_by_distance[0][0]
+
+        journey_distance = remaining_shops_sorted_by_distance[0][1]
+        journey_time = remaining_shops_sorted_by_distance[0][2]
+        (arrival_day, arrival_time) = add_on_journey_time(start_time, current_day, journey_time)
+
+        itinerary.append(
+            Journey(arrival_day, start_location, start_time, arrival_location, arrival_time, journey_distance))
+
+        remaining_shops_sorted_by_distance.pop(0)
+
+        list_of_shops_to_visit = [s[0] for s in remaining_shops_sorted_by_distance]
+
     return itinerary
 
 
-def find_next_shop(current_shop, remaining_shops):
+def return_list_of_shops_sorted_by_distance(current_shop, remaining_shops):
     current_long = current_shop.longitude
     current_lat = current_shop.latitude
     distances_from_current_shop = []
@@ -27,7 +43,7 @@ def find_next_shop(current_shop, remaining_shops):
     if distances_from_current_shop[0][2] > Parameters.max_journey_time_in_day:
         raise exceptions.NextShopTooFar
 
-    return distances_from_current_shop[0]
+    return distances_from_current_shop
 
 
 def load_shop_string_to_list(shop_string):
@@ -56,3 +72,10 @@ def add_on_journey_time(start_time, start_day, journey_time):
         finish_time = start_time + journey_time
 
     return final_day, finish_time
+
+
+def get_current_position_and_time(itinerary):
+    current_position = itinerary[-1].arrival_location
+    current_time = itinerary[-1].arrival_time
+    current_day = itinerary[-1].day
+    return current_position, current_time, current_day

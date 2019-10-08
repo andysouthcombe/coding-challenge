@@ -7,15 +7,15 @@ import exceptions
 class FindNextBranchTests(unittest.TestCase):
 
     def test_find_next_branch_returns_next_shop_with_one_branch(self):
-        self.assertEqual(find_next_shop(ShopData.jl_head_office, [ShopData.peter_jones])[0].name, "Peter Jones")
+        self.assertEqual(return_list_of_shops_sorted_by_distance(ShopData.jl_head_office, [ShopData.peter_jones])[0][0].name, "Peter Jones")
 
     def test_find_next_branch_returns_nearest_shop_with_two_branches_to_visit(self):
         two_branch_list = [ShopData.abergavenny, ShopData.brent_cross]
-        self.assertEqual(find_next_shop(ShopData.jl_head_office, two_branch_list)[0].name, "Brent Cross")
+        self.assertEqual(return_list_of_shops_sorted_by_distance(ShopData.jl_head_office, two_branch_list)[0][0].name, "Brent Cross")
 
     def test_throws_exception_if_next_shop_unreachable(self):
         with self.assertRaises(exceptions.NextShopTooFar):
-            find_next_shop(ShopData.jl_exeter, [ShopData.jl_aberdeen])
+            return_list_of_shops_sorted_by_distance(ShopData.jl_exeter, [ShopData.jl_aberdeen])
 
 
 class LoadShopStringToListTests(unittest.TestCase):
@@ -37,6 +37,15 @@ class VisitAllShopsTest(unittest.TestCase):
         self.assertEqual(returned_list[0].arrival_time, Parameters.visit_length_in_seconds)
         self.assertEqual(returned_list[0].journey_distance, 0)
 
+    def test_records_one_shop_to_visit(self):
+        input_string = ",".join([ShopData.jl_head_office.to_string(), ShopData.brent_cross.to_string()])
+        returned_list = visit_all_shops(input_string)
+        self.assertEqual(returned_list[0].start_location.name, ShopData.jl_head_office.name)
+        self.assertEqual(returned_list[1].arrival_location.name, ShopData.brent_cross.name)
+        self.assertEqual(returned_list[1].arrival_time,
+                         Parameters.visit_length_in_seconds + Parameters.head_office_to_brent_cross_travel_time)
+        self.assertEqual(returned_list[1].day, 1)
+
 
 class CalculateJourneyTimeTests(unittest.TestCase):
     def test_calculate_journey_times(self):
@@ -48,13 +57,22 @@ class AddOnJourneyTimeTests(unittest.TestCase):
     def test_adds_journey_time_for_same_day_journey(self):
         start_location = ShopData.jl_head_office
         end_location = ShopData.brent_cross
-        next_trip = find_next_shop(start_location, [end_location])
+        next_trip = return_list_of_shops_sorted_by_distance(start_location, [end_location])[0]
         start_time = 0
-        self.assertEqual(add_on_journey_time(start_time, 1, next_trip[2]), (1, 949))
+        self.assertEqual(add_on_journey_time(start_time, 1, next_trip[2]),
+                         (1, Parameters.head_office_to_brent_cross_travel_time))
 
     def test_if_journey_finishes_after_8pm_starts_next_day(self):
         start_location = ShopData.jl_head_office
         end_location = ShopData.brent_cross
-        next_trip = find_next_shop(start_location, [end_location])
+        next_trip = return_list_of_shops_sorted_by_distance(start_location, [end_location])[0]
         start_time = Parameters.max_journey_time_in_day - 700
-        self.assertEqual(add_on_journey_time(start_time, 3, next_trip[2]), (4, 949))
+        self.assertEqual(add_on_journey_time(start_time, 3, next_trip[2]),
+                         (4, Parameters.head_office_to_brent_cross_travel_time))
+
+
+class GetCurrentPositionAndTimeTests(unittest.TestCase):
+    def test_gets_latest_position_time_and_day(self):
+        itinerary = [Journey(1, ShopData.jl_head_office, 0, ShopData.jl_aberdeen, 10, 100)]
+        itinerary.append(Journey(2, ShopData.jl_aberdeen, 0, ShopData.jl_exeter, 300, 400))
+        self.assertEqual(get_current_position_and_time(itinerary), (ShopData.jl_exeter, 300, 2))
