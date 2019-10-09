@@ -38,7 +38,7 @@ class VisitAllShopsTest(unittest.TestCase):
         self.assertEqual(returned_list[0].start_location.name, ShopData.jl_head_office.name)
         self.assertEqual(returned_list[0].start_time, 0)
         self.assertEqual(returned_list[0].arrival_location.name, ShopData.jl_head_office.name)
-        self.assertEqual(returned_list[0].arrival_time, Parameters.visit_length_in_seconds)
+        self.assertEqual(returned_list[0].arrival_time, 0)
         self.assertEqual(returned_list[0].journey_distance, 0)
 
     def test_records_one_shop_to_visit(self):
@@ -64,7 +64,7 @@ class AddOnJourneyTimeTests(unittest.TestCase):
         next_trip = return_list_of_shops_sorted_by_distance(start_location, [end_location])[0]
         start_time = 0
         self.assertEqual(add_on_journey_time(start_time, 1, next_trip[2]),
-                         (1, Parameters.head_office_to_brent_cross_travel_time))
+                         (start_time,1, Parameters.head_office_to_brent_cross_travel_time))
 
     def test_if_journey_finishes_after_8pm_starts_next_day(self):
         start_location = ShopData.jl_head_office
@@ -72,7 +72,7 @@ class AddOnJourneyTimeTests(unittest.TestCase):
         next_trip = return_list_of_shops_sorted_by_distance(start_location, [end_location])[0]
         start_time = Parameters.max_journey_time_in_day - 700
         self.assertEqual(add_on_journey_time(start_time, 3, next_trip[2]),
-                         (4, Parameters.head_office_to_brent_cross_travel_time-700))
+                         (0,4, Parameters.head_office_to_brent_cross_travel_time-700))
 
 
 class GetCurrentPositionAndTimeTests(unittest.TestCase):

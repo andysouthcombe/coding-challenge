@@ -3,17 +3,16 @@ from staticData import Parameters
 from model import ShopLocation
 from model import Journey
 import exceptions
-from staticData import ShopData
 from listOfBranches import ListOfBranches
 
 
 def visit_all_shops(shop_string):
     list_of_shops_to_visit = load_shop_string_to_list(shop_string)
     itinerary = [
-        Journey(1, list_of_shops_to_visit[0], 0, list_of_shops_to_visit[0], Parameters.visit_length_in_seconds, 0)]
+        Journey(1, list_of_shops_to_visit[0], 0, list_of_shops_to_visit[0], 0, 0)]
     list_of_shops_to_visit.pop(0)
     while len(list_of_shops_to_visit) > 0:
-        (start_location, start_time, current_day) = get_current_position_and_time(itinerary)
+        (start_location, current_time, current_day) = get_current_position_and_time(itinerary)
         try:
             remaining_shops_sorted_by_distance = return_list_of_shops_sorted_by_distance(start_location,
                                                                                          list_of_shops_to_visit)
@@ -25,10 +24,12 @@ def visit_all_shops(shop_string):
 
         journey_distance = remaining_shops_sorted_by_distance[0][1]
         journey_time = remaining_shops_sorted_by_distance[0][2]
-        (arrival_day, arrival_time) = add_on_journey_time(start_time, current_day, journey_time)
+        end_of_visit_time = current_time + Parameters.visit_length_in_seconds
+
+        (departure_time, arrival_day, arrival_time) = add_on_journey_time(end_of_visit_time, current_day, journey_time)
 
         itinerary.append(
-            Journey(arrival_day, start_location, start_time, arrival_location, arrival_time, journey_distance))
+            Journey(arrival_day, start_location, departure_time, arrival_location, arrival_time, journey_distance))
 
         remaining_shops_sorted_by_distance.pop(0)
 
@@ -75,7 +76,13 @@ def calculate_journey_time_in_seconds(distance_in_miles):
 def add_on_journey_time(start_time, start_day, journey_time):
     total_time = start_time + journey_time
     days_to_add, new_time = divmod(total_time, Parameters.max_journey_time_in_day)
-    return start_day + days_to_add, new_time
+
+    if days_to_add > 0:
+        departure_time = 0
+    else:
+        departure_time = start_time
+
+    return departure_time, start_day + days_to_add, new_time
 
 
 def get_current_position_and_time(itinerary):
