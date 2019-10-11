@@ -13,6 +13,12 @@ class MyFoldTests (){
     fun `should work on a list with two integers` () {
         assertThat(myFold(listOf(1,2),"Number is ") { acc, element -> acc + element.toString()}).isEqualTo("Number is 12")
     }
+}
 
-
+class myGenericFoldTests() {
+    @Test
+    fun `should work on a list with strings` () {
+        val stringList = listOf<String>("a","b","c")
+        assertThat(myGenericFold(stringList,"") {acc, element -> acc + element.toString()}).isEqualTo("abc")
+    }
 }
