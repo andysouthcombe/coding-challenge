@@ -1,3 +1,7 @@
 fun myFold(inputList:List<Int>, acc:String,f:(String, Int)->String): String {
-    return acc + inputList[0].toString()
+    var output = acc
+    for(i in inputList) {
+        output = f(output,i)
+    }
+    return output
 }
