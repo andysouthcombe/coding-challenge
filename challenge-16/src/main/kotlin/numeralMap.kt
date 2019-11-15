@@ -3,5 +3,6 @@ val numeralMap = mapOf(
     "V" to 5,
     "X" to 10,
     "L" to 50,
-    "C" to 100
+    "C" to 100,
+    "D" to 500
 )
