@@ -27,4 +27,8 @@ class RomanNumeralToIntegerTests {
     fun `should convert D to 500` () {
         assertThat(romanNumeralToInteger("D")).isEqualTo(500)
     }
+    @Test
+    fun `should convert M to 1000` () {
+        assertThat(romanNumeralToInteger("M")).isEqualTo(1000)
+    }
 }

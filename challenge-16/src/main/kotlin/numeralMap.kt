@@ -4,5 +4,6 @@ val numeralMap = mapOf(
     "X" to 10,
     "L" to 50,
     "C" to 100,
-    "D" to 500
+    "D" to 500,
+    "M" to 1000
 )
