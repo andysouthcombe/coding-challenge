@@ -1,3 +1,3 @@
-fun romanNumeralToInteger(inputString: String):Int {
-    return 1
+fun romanNumeralToInteger(inputString: String):Int? {
+    return numeralMap[inputString]
 }
