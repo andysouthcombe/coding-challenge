@@ -15,4 +15,8 @@ class RomanNumeralToIntegerTests {
     fun `should convert X to 10` () {
         assertThat(romanNumeralToInteger("X")).isEqualTo(10)
     }
+    @Test
+    fun `should convert L to 50` () {
+        assertThat(romanNumeralToInteger("L")).isEqualTo(50)
+    }
 }
