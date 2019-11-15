@@ -15,4 +15,8 @@ class RomanNumeralToIntegerTests {
     fun `should convert III to 3` () {
         assertThat(romanNumeralToInteger("III")).isEqualTo(3)
     }
+    @Test
+    fun `should convert IV to 4` () {
+        assertThat(romanNumeralToInteger("IV")).isEqualTo(4)
+    }
 }
