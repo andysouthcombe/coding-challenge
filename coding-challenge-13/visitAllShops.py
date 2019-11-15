@@ -4,12 +4,15 @@ from model import ShopLocation
 from model import Journey
 import exceptions
 from listOfBranches import ListOfBranches
-
+from staticData import ShopData
+import gmplot
 
 def visit_all_shops(shop_string):
     list_of_shops_to_visit = load_shop_string_to_list(shop_string)
     itinerary = [
         Journey(1, list_of_shops_to_visit[0], 0, list_of_shops_to_visit[0], 0, 0)]
+    latitude_list = [float(list_of_shops_to_visit[0].latitude)]
+    longitude_list = [float(list_of_shops_to_visit[0].longitude)]
     list_of_shops_to_visit.pop(0)
     while len(list_of_shops_to_visit) > 0:
         (start_location, current_time, current_day) = get_current_position_and_time(itinerary)
@@ -30,12 +33,13 @@ def visit_all_shops(shop_string):
 
         itinerary.append(
             Journey(arrival_day, start_location, departure_time, arrival_location, arrival_time, journey_distance))
-
+        latitude_list.append(float(arrival_location.latitude))
+        longitude_list.append(float(arrival_location.longitude))
         remaining_shops_sorted_by_distance.pop(0)
 
         list_of_shops_to_visit = [s[0] for s in remaining_shops_sorted_by_distance]
 
-    return itinerary
+    return itinerary, latitude_list, longitude_list
 
 
 def return_list_of_shops_sorted_by_distance(current_shop, remaining_shops):
@@ -93,7 +97,25 @@ def get_current_position_and_time(itinerary):
 
 
 if __name__ == "__main__":
-    journey_list = visit_all_shops(ListOfBranches.list_of_branches)
+    journey_list, latitude_list, longitude_list = visit_all_shops(ListOfBranches.list_of_branches)
+    #journey_list, latitude_list, longitude_list = visit_all_shops(ShopData.sample_input_string)
     print("day,start_location,start_time,arrival_location,arrival_time,journey_distance")
     for j in journey_list:
         print(j.to_string())
+
+gmap3 = gmplot.GoogleMapPlotter(51.496466,
+                                -0.141499, 13)
+
+# scatter method of map object
+# scatter points on the google map
+gmap3.scatter(latitude_list, longitude_list, '# FF0000',
+               size=40, marker=False)
+
+# Plot method Draw a line in
+# between given coordinates
+gmap3.plot(latitude_list, longitude_list,
+            'cornflowerblue', edge_width=2.5)
+
+gmap3.apikey = 'AIzaSyDn0V6fIlJVwkzUr60Vx7ka1UxGBBDwBoo'
+
+gmap3.draw("C:\\temp\\map13.html")
