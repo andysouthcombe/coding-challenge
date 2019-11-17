@@ -62,4 +62,10 @@ class IntegerToRomanNumeralTests {
     fun `should convert 1 to I` (){
         assertThat(integerToRomanNumeral(1)).isEqualTo("I")
     }
+    @Test
+    fun `should convert 2 to II` (){
+        assertThat(integerToRomanNumeral(2)).isEqualTo("II")
+    }
+
+
 }
