@@ -32,3 +32,10 @@ class RomanNumeralToIntegerTests {
         assertThat(romanNumeralToInteger("M")).isEqualTo(1000)
     }
 }
+
+class readRomanNumeralTests {
+    @Test
+    fun `should convert I to 1` () {
+        assertThat(readRomanNumeral("I")).isEqualTo(1)
+    }
+}
