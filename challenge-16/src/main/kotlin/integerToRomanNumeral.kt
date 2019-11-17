@@ -4,7 +4,7 @@ fun integerToRomanNumeral(inputInteger: Int): String{
     while(remainder > 0)
     {
         var largestNumeral =  numeralMap.floorValue(remainder)
-        remainder -= (numeralMap[largestNumeral] ?: 0)
+        remainder -= romanNumeralToInteger(largestNumeral)
         outputNumeral += largestNumeral
     }
     return outputNumeral

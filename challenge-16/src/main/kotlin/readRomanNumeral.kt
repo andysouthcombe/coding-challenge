@@ -1,6 +1,6 @@
 fun readRomanNumeral(inputNumeral: String): Int {
     val numerals = inputNumeral.toCharArray()
-    val numeralsAsIntegers = numerals.map { romanNumeralToInteger(it.toString()) ?: 0 }
+    val numeralsAsIntegers = numerals.map { romanNumeralToInteger(it.toString()) }
     var runningTotal = 0
 
     for (n in numeralsAsIntegers.indices) {
