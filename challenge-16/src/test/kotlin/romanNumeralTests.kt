@@ -56,3 +56,10 @@ class ReadRomanNumeralTests {
     }
 
 }
+
+class IntegerToRomanNumeralTests {
+    @Test
+    fun `should convert 1 to I` (){
+        assertThat(integerToRomanNumeral(1)).isEqualTo("I")
+    }
+}
