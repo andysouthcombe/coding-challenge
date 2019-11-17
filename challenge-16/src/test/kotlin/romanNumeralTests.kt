@@ -33,9 +33,13 @@ class RomanNumeralToIntegerTests {
     }
 }
 
-class readRomanNumeralTests {
+class ReadRomanNumeralTests {
     @Test
     fun `should convert I to 1` () {
         assertThat(readRomanNumeral("I")).isEqualTo(1)
+    }
+    @Test
+    fun `should convert II to 2` () {
+        assertThat(readRomanNumeral("II")).isEqualTo(2)
     }
 }

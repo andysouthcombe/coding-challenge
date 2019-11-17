@@ -1,3 +1,10 @@
 fun readRomanNumeral(inputNumeral:String):Int {
-    return 1
+    val numerals = inputNumeral.toCharArray()
+    var runningTotal = 0
+
+    for (n in numerals) {
+        val numeralAsInteger = romanNumeralToInteger(n.toString())
+        runningTotal += numeralAsInteger ?: 0
+    }
+    return runningTotal
 }
