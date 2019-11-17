@@ -46,6 +46,13 @@ class ReadRomanNumeralTests {
     fun `should convert IV to 4` () {
         assertThat(readRomanNumeral("IV")).isEqualTo(4)
     }
-
+    @Test
+    fun `should convert LXXXV to 85` () {
+        assertThat(readRomanNumeral("LXXXV")).isEqualTo(85)
+    }
+    @Test
+    fun `should convert XCV to 95` () {
+        assertThat(readRomanNumeral("XCV")).isEqualTo(95)
+    }
 
 }
