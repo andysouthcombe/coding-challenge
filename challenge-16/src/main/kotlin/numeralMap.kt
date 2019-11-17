@@ -1,4 +1,4 @@
-val numeralMap = sortedMapOf(
+val numeralMap = mapOf(
     "I" to 1,
     "IV" to 4,
     "V" to 5,

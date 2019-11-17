@@ -68,13 +68,18 @@ class IntegerToRomanNumeralTests {
     }
 
     @Test
+    fun `should convert 3 to III` (){
+        assertThat(integerToRomanNumeral(3)).isEqualTo("III")
+    }
+
+    @Test
     fun `should convert 4 to IV` (){
         assertThat(integerToRomanNumeral(4)).isEqualTo("IV")
     }
 
     @Test
     fun `should convert 97 to XCVII` (){
-        assertThat(integerToRomanNumeral(4)).isEqualTo("IV")
+        assertThat(integerToRomanNumeral(97)).isEqualTo("XCVII")
     }
 
 
@@ -85,5 +90,15 @@ class AddRomanNumeralTests{
     fun `should add I and I to get II` () {
         assertThat(addRomanNumerals("I","I")).isEqualTo("II")
     }
+    @Test
+    fun `should add I and II to get III` () {
+        assertThat(addRomanNumerals("I","II")).isEqualTo("III")
+    }
+    @Test
+    fun `should add C and IX to get CIX` () {
+        assertThat(addRomanNumerals("C","IX")).isEqualTo("CIX")
+    }
+
+
 
 }

@@ -1,3 +1,3 @@
 fun addRomanNumerals(numeralA:String,numeralB: String):String {
-    return integerToRomanNumeral(romanNumeralToInteger(numeralA) + romanNumeralToInteger(numeralB))
+    return integerToRomanNumeral(readRomanNumeral(numeralA) + readRomanNumeral(numeralB))
 }
