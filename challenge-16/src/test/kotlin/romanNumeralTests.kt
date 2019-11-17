@@ -67,5 +67,15 @@ class IntegerToRomanNumeralTests {
         assertThat(integerToRomanNumeral(2)).isEqualTo("II")
     }
 
+    @Test
+    fun `should convert 4 to IV` (){
+        assertThat(integerToRomanNumeral(4)).isEqualTo("IV")
+    }
+
+    @Test
+    fun `should convert 97 to XCVII ` (){
+        assertThat(integerToRomanNumeral(4)).isEqualTo("IV")
+    }
+
 
 }
