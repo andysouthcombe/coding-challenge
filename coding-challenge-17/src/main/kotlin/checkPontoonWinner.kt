@@ -11,3 +11,7 @@ fun cardStringToCardObject(cardString:String):Card{
 fun handStringToHandList(playerHandString: Array<String>):Hand {
     return playerHandString.map{cardStringToCardObject(it)}
 }
+
+fun calculateHandValue(hand:Hand):Int {
+    return hand.sumBy { it.cardName.cardValue }
+}

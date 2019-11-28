@@ -40,3 +40,11 @@ class HandStringToHandObjectTests {
         assertThat(handStringToHandList(arrayOf("2H","JD","QS"))).isEqualTo(requiredHand)
     }
 }
+
+class CalculateHandValueTests {
+    @Test
+    fun `should add two numeric cards to get the value as the sum` () {
+        val hand:Hand = listOf(eightOfClubs,threeOfSpades)
+        assertThat(calculateHandValue(hand)).isEqualTo(11)
+    }
+}
