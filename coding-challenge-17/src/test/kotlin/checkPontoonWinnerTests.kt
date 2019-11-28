@@ -13,7 +13,13 @@ val queenOfSpades = Card(CardName.QUEEN, Suit.SPADES)
 val fourOfClubs = Card(CardName.FOUR, Suit.CLUBS)
 
 class CheckPontoonWinnerTests {
-
+    @Test
+    fun `should declare player the winner if dealer is bust` () {
+        val playerHand = arrayOf("5D","JC")
+        val dealerHand = arrayOf("QC","TH","TH")
+        val result = checkPontoonWinner(playerHand,dealerHand)
+        assertThat(result).isEqualTo(Pair("The player","Five of Diamonds,Jack of Clubs"))
+    }
 }
 
 class CardStringToCardsTests {
@@ -102,4 +108,19 @@ class IsBustTests {
         assertThat(hand.isBust()).isTrue()
     }
 
+}
+
+class CardTests {
+    @Test
+    fun `should display card name` () {
+        assertThat(eightOfClubs.toString()).isEqualTo("Eight of Clubs")
+    }
+}
+
+class HandPrintNameTests {
+    @Test
+    fun `should print name for hand of two cards` () {
+        val hand:Hand = listOf(fourOfClubs,aceOfHearts)
+        assertThat(hand.printName()).isEqualTo("Four of Clubs, Ace of Hearts")
+    }
 }

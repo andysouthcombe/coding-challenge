@@ -1,5 +1,7 @@
 data class Card(val cardName: CardName, val suit: Suit) {
-
+    override fun toString(): String {
+        return "${this.cardName.cardName} of ${this.suit.suitName}"
+    }
 }
 
 typealias Hand = List<Card>
@@ -29,4 +31,8 @@ fun Hand.calculateValue(): Int {
 
 fun Hand.isBust():Boolean {
     return this.calculateValue() > bustValue
+}
+
+fun Hand.printName():String {
+    return this.joinToString { it.toString()}
 }
