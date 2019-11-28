@@ -1,5 +1,7 @@
 import assertk.assertThat
 import assertk.assertions.isEqualTo
+import assertk.assertions.isFalse
+import assertk.assertions.isTrue
 import org.junit.jupiter.api.Test
 
 val eightOfClubs = Card(CardName.EIGHT,Suit.CLUBS)
@@ -57,5 +59,23 @@ class CalculateHandValueTests {
     fun `should handle value for aces high` () {
         val hand:Hand = listOf(fourOfClubs,aceOfHearts)
         assertThat(calculateHandValue(hand)).isEqualTo(15)
+    }
+    @Test
+    fun `should handle value for aces low` () {
+        val hand:Hand = listOf(fourOfClubs,aceOfHearts,eightOfClubs)
+        assertThat(calculateHandValue(hand)).isEqualTo(13)
+    }
+}
+
+class ContainsAceTests {
+    @Test
+    fun `returns true for hand containing an ace` () {
+        val hand:Hand = listOf(fourOfClubs,aceOfHearts,eightOfClubs)
+        assertThat(hand.containsAce()).isTrue()
+    }
+    @Test
+    fun `returns false for hand not containing an ace` () {
+        val hand:Hand = listOf(twoOfHearts,jackOfDiamonds,queenOfSpades)
+        assertThat(hand.containsAce()).isFalse()
     }
 }
