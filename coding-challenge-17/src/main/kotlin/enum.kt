@@ -5,6 +5,11 @@ enum class Suit (val suitCode:String, val suitName:String){
     DIAMONDS("D","Diamonds"),
     HEARTS("H","Hearts"),
     SPADES("S","Spades");
+
+    companion object {
+        private val map = Suit.values().associateBy(Suit::suitCode)
+        fun fromString(suitName:String) = map[suitName] ?: throw Exception("Invalid Suit Code")
+    }
 }
 
 enum class CardName (val cardNameCode:String,val cardName:String){
