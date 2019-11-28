@@ -8,6 +8,7 @@ val twoOfHearts = Card(CardName.TWO, Suit.HEARTS)
 val aceOfHearts = Card(CardName.ACE, Suit.HEARTS)
 val jackOfDiamonds = Card(CardName.JACK, Suit.DIAMONDS)
 val queenOfSpades = Card(CardName.QUEEN, Suit.SPADES)
+val fourOfClubs = Card(CardName.FOUR, Suit.CLUBS)
 
 class CheckPontoonWinnerTests {
 
@@ -46,5 +47,15 @@ class CalculateHandValueTests {
     fun `should add two numeric cards to get the value as the sum` () {
         val hand:Hand = listOf(eightOfClubs,threeOfSpades)
         assertThat(calculateHandValue(hand)).isEqualTo(11)
+    }
+    @Test
+    fun `should add numeric and picture cards to get the value as the sum` () {
+        val hand:Hand = listOf(twoOfHearts,jackOfDiamonds,queenOfSpades)
+        assertThat(calculateHandValue(hand)).isEqualTo(22)
+    }
+    @Test
+    fun `should handle value for aces high` () {
+        val hand:Hand = listOf(fourOfClubs,aceOfHearts)
+        assertThat(calculateHandValue(hand)).isEqualTo(15)
     }
 }

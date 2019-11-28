@@ -25,7 +25,7 @@ enum class CardName (val cardNameCode:String,val cardName:String,val cardValue:I
     JACK("J","Jack",10),
     QUEEN("Q","Queen",10),
     KING("K","King",10),
-    ACE("A","Ace",10);
+    ACE("A","Ace",11);
 
     companion object {
         private val map = CardName.values().associateBy(CardName::cardNameCode)
