@@ -87,9 +87,19 @@ class IsBustTests {
         assertThat(hand.isBust()).isFalse()
     }
     @Test
-    fun `should return true for hand less than 22 with an ace` () {
+    fun `should return false for hand less than 22 with an ace` () {
         val hand:Hand = listOf(fourOfClubs,aceOfHearts)
         assertThat(hand.isBust()).isFalse()
+    }
+    @Test
+    fun `should return true for hand over 21 with no aces` () {
+        val hand:Hand = listOf(twoOfHearts,jackOfDiamonds,queenOfSpades)
+        assertThat(hand.isBust()).isTrue()
+    }
+    @Test
+    fun `should return true for hand over 21 with an aces` () {
+        val hand:Hand = listOf(twoOfHearts,jackOfDiamonds,queenOfSpades,aceOfHearts)
+        assertThat(hand.isBust()).isTrue()
     }
 
 }
