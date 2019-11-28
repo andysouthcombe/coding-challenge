@@ -2,6 +2,13 @@ import assertk.assertThat
 import assertk.assertions.isEqualTo
 import org.junit.jupiter.api.Test
 
+val eightOfClubs = Card(CardName.EIGHT,Suit.CLUBS)
+val threeOfSpades = Card(CardName.THREE,Suit.SPADES)
+val twoOfHearts = Card(CardName.TWO, Suit.HEARTS)
+val aceOfHearts = Card(CardName.ACE, Suit.HEARTS)
+val jackOfDiamonds = Card(CardName.JACK, Suit.DIAMONDS)
+val queenOfSpades = Card(CardName.QUEEN, Suit.SPADES)
+
 class CheckPontoonWinnerTests {
 
 }
@@ -9,17 +16,27 @@ class CheckPontoonWinnerTests {
 class CardStringToCardsTests {
     @Test
     fun `should parse alphanumeric heart card string to card object`(){
-        val requiredCard = Card(CardName.TWO, Suit.HEARTS)
-        assertThat(cardStringToCardObject("2H")).isEqualTo(requiredCard)
+        assertThat(cardStringToCardObject("2H")).isEqualTo(twoOfHearts)
     }
     @Test
     fun `should parse alpha heart card string to card object`(){
-        val requiredCard = Card(CardName.ACE, Suit.HEARTS)
-        assertThat(cardStringToCardObject("AH")).isEqualTo(requiredCard)
+        assertThat(cardStringToCardObject("AH")).isEqualTo(aceOfHearts)
     }
     @Test
     fun `should parse alpha non heart card string to card object`(){
-        val requiredCard = Card(CardName.JACK, Suit.DIAMONDS)
-        assertThat(cardStringToCardObject("JD")).isEqualTo(requiredCard)
+        assertThat(cardStringToCardObject("JD")).isEqualTo(jackOfDiamonds)
+    }
+}
+
+class HandStringToHandObjectTests {
+    @Test
+    fun `should parse alphanumeric hand string of two cards to hand list for player`(){
+        val requiredHand:Hand = listOf(eightOfClubs,threeOfSpades)
+        assertThat(handStringToHandList(arrayOf("8C","3S"))).isEqualTo(requiredHand)
+    }
+    @Test
+    fun `should parse alphanumeric hand string of three cards to hand list for player`(){
+        val requiredHand:Hand = listOf(twoOfHearts,jackOfDiamonds,queenOfSpades)
+        assertThat(handStringToHandList(arrayOf("2H","JD","QS"))).isEqualTo(requiredHand)
     }
 }
