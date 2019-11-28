@@ -44,26 +44,26 @@ class HandStringToHandObjectTests {
     }
 }
 
-class CalculateHandValueTests {
+class HandValueTests {
     @Test
     fun `should add two numeric cards to get the value as the sum` () {
         val hand:Hand = listOf(eightOfClubs,threeOfSpades)
-        assertThat(calculateHandValue(hand)).isEqualTo(11)
+        assertThat((hand.calculateValue())).isEqualTo(11)
     }
     @Test
     fun `should add numeric and picture cards to get the value as the sum` () {
         val hand:Hand = listOf(twoOfHearts,jackOfDiamonds,queenOfSpades)
-        assertThat(calculateHandValue(hand)).isEqualTo(22)
+        assertThat(hand.calculateValue()).isEqualTo(22)
     }
     @Test
     fun `should handle value for aces high` () {
         val hand:Hand = listOf(fourOfClubs,aceOfHearts)
-        assertThat(calculateHandValue(hand)).isEqualTo(15)
+        assertThat(hand.calculateValue()).isEqualTo(15)
     }
     @Test
     fun `should handle value for aces low` () {
         val hand:Hand = listOf(fourOfClubs,aceOfHearts,eightOfClubs)
-        assertThat(calculateHandValue(hand)).isEqualTo(13)
+        assertThat(hand.calculateValue()).isEqualTo(13)
     }
 }
 

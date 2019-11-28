@@ -13,3 +13,16 @@ fun Hand.containsAce ():Boolean{
     return false
 }
 
+fun Hand.calculateValue(): Int {
+    val highValue = this.sumBy { it.cardName.cardValue }
+    return if (highValue > bustValue && this.containsAce()) {
+        this.sumBy {
+            when (it.cardName) {
+                CardName.ACE -> 1
+                else -> it.cardName.cardValue
+            }
+        }
+    } else {
+        highValue
+    }
+}
