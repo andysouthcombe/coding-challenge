@@ -4,10 +4,10 @@ fun checkPontoonWinner(playerHandString: Array<String>, dealerHandString: Array<
     val playerHand = handStringToHandList(playerHandString)
     val dealerHand = handStringToHandList(dealerHandString)
 
-    return if (dealerHand.rank() > playerHand.rank()) {
-        Pair("The dealer", dealerHand.printName())
-    } else {
+    return if (playerHand.rank() > dealerHand.rank()) {
         Pair("The player", playerHand.printName())
+    } else {
+        Pair("The dealer", dealerHand.printName())
     }
 }
 
