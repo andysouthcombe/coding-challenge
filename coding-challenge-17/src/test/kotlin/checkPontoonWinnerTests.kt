@@ -34,7 +34,6 @@ class CheckPontoonWinnerTests {
         val result = checkPontoonWinner(playerHand,dealerHand)
         assertThat(result).isEqualTo(Pair("The player","Queen of Clubs, Ace of Spades"))
     }
-
     @Test
     fun `should declare player the winner if player has five card trick and dealer has 21` () {
         val playerHand = arrayOf("2C","6C","5D","3S","4H")
@@ -42,7 +41,13 @@ class CheckPontoonWinnerTests {
         val result = checkPontoonWinner(playerHand,dealerHand)
         assertThat(result).isEqualTo(Pair("The player","Two of Clubs, Six of Clubs, Five of Diamonds, Three of Spades, Four of Hearts"))
     }
-
+    @Test
+    fun `should declare player the winner if player has higher score` () {
+        val playerHand = arrayOf("2C","TD")
+        val dealerHand = arrayOf("2C","9S")
+        val result = checkPontoonWinner(playerHand,dealerHand)
+        assertThat(result).isEqualTo(Pair("The player","Two of Clubs, Ten of Diamonds"))
+    }
 }
 
 class CardStringToCardsTests {
