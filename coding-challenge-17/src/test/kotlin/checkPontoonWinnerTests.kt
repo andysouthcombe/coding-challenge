@@ -69,13 +69,21 @@ class HandValueTests {
 
 class ContainsAceTests {
     @Test
-    fun `returns true for hand containing an ace` () {
+    fun `should return true for hand containing an ace` () {
         val hand:Hand = listOf(fourOfClubs,aceOfHearts,eightOfClubs)
         assertThat(hand.containsAce()).isTrue()
     }
     @Test
-    fun `returns false for hand not containing an ace` () {
+    fun `should return false for hand not containing an ace` () {
         val hand:Hand = listOf(twoOfHearts,jackOfDiamonds,queenOfSpades)
         assertThat(hand.containsAce()).isFalse()
+    }
+}
+
+class IsBustTests {
+    @Test
+    fun `should return false for hand less than 22 with no aces` () {
+        val hand:Hand = listOf(eightOfClubs,threeOfSpades)
+        assertThat(hand.isBust()).isFalse()
     }
 }

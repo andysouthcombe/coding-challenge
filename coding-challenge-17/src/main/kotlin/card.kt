@@ -26,3 +26,7 @@ fun Hand.calculateValue(): Int {
         highValue
     }
 }
+
+fun Hand.isBust():Boolean {
+    return this.calculateValue() > bustValue
+}
