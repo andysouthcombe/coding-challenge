@@ -1,7 +1,12 @@
 const val bustValue = 21
 
 fun checkPontoonWinner(playerHandString: Array<String>, dealerHandString: Array<String>):Pair<String,String> {
-    return Pair("a","b")
+    val playerHand = handStringToHandList(playerHandString)
+    val dealerHand = handStringToHandList(dealerHandString)
+    if (dealerHand.isBust()) {
+        return Pair("The player",playerHand.printName())
+    }
+    else return Pair("a","b")
 }
 
 fun cardStringToCardObject(cardString: String): Card {

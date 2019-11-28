@@ -18,8 +18,9 @@ class CheckPontoonWinnerTests {
         val playerHand = arrayOf("5D","JC")
         val dealerHand = arrayOf("QC","TH","TH")
         val result = checkPontoonWinner(playerHand,dealerHand)
-        assertThat(result).isEqualTo(Pair("The player","Five of Diamonds,Jack of Clubs"))
+        assertThat(result).isEqualTo(Pair("The player","Five of Diamonds, Jack of Clubs"))
     }
+
 }
 
 class CardStringToCardsTests {
