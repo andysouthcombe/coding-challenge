@@ -7,12 +7,7 @@ data class Card(val cardName: CardName, val suit: Suit) {
 typealias Hand = List<Card>
 
 fun Hand.containsAce ():Boolean{
-    for(card in this) {
-        if (card.cardName == CardName.ACE) {
-            return true
-        }
-    }
-    return false
+    return this.any{ it.cardName == CardName.ACE}
 }
 
 fun Hand.calculateValue(): Int {
@@ -35,4 +30,11 @@ fun Hand.isBust():Boolean {
 
 fun Hand.printName():String {
     return this.joinToString { it.toString()}
+}
+
+fun Hand.containsPictureCard():Boolean {
+    return this.any{ it.cardName == CardName.JACK || it.cardName == CardName.KING || it.cardName ==CardName.QUEEN }
+}
+fun Hand.isPontoon():Boolean {
+    return this.containsAce() && this.containsPictureCard()
 }

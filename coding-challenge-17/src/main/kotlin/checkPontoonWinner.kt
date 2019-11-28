@@ -10,6 +10,10 @@ fun checkPontoonWinner(playerHandString: Array<String>, dealerHandString: Array<
         dealerWins = false
     }
 
+    if (playerHand.isPontoon() && !dealerHand.isPontoon()) {
+        dealerWins = false
+    }
+
     return if (dealerWins) {
         Pair("The dealer", dealerHand.printName())
     } else {

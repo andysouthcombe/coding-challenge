@@ -27,6 +27,14 @@ class CheckPontoonWinnerTests {
         val result = checkPontoonWinner(playerHand,dealerHand)
         assertThat(result).isEqualTo(Pair("The dealer","Seven of Diamonds, King of Clubs"))
     }
+    @Test
+    fun `should declare player the winner if player has pontoon and dealer has 21` () {
+        val playerHand = arrayOf("QC","AS")
+        val dealerHand = arrayOf("TH","9S","2C")
+        val result = checkPontoonWinner(playerHand,dealerHand)
+        assertThat(result).isEqualTo(Pair("The player","Queen of Clubs, Ace of Spades"))
+    }
+
 
 }
 
