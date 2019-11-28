@@ -1,3 +1,3 @@
-data class Card(val suit: Suit, val cardName: CardName)
+data class Card(val cardName: CardName, val suit: Suit)
 
 typealias Hand = Pair<Card,Card>
