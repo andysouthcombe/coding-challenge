@@ -20,6 +20,13 @@ class CheckPontoonWinnerTests {
         val result = checkPontoonWinner(playerHand,dealerHand)
         assertThat(result).isEqualTo(Pair("The player","Five of Diamonds, Jack of Clubs"))
     }
+    @Test
+    fun `should declare dealer the winner if player is bust` () {
+        val playerHand = arrayOf("QC","TH","TH")
+        val dealerHand = arrayOf("7D","KC")
+        val result = checkPontoonWinner(playerHand,dealerHand)
+        assertThat(result).isEqualTo(Pair("The dealer","Seven of Diamonds, King of Clubs"))
+    }
 
 }
 
