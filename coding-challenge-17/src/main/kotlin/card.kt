@@ -38,3 +38,20 @@ fun Hand.containsPictureCard():Boolean {
 fun Hand.isPontoon():Boolean {
     return this.containsAce() && this.containsPictureCard()
 }
+
+fun Hand.isFiveCardTrick():Boolean {
+    return this.count() == 5 && !this.isBust()
+}
+
+fun Hand.rank() : Int {
+    if (this.isPontoon()) {
+        return 100
+    }
+    if (this.isFiveCardTrick()) {
+        return 101
+    }
+    if (this.isBust()) {
+        return -1
+    }
+    return this.calculateValue()
+}
