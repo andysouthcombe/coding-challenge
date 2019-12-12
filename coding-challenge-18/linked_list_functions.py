@@ -26,3 +26,19 @@ def append_string_to_list(first_node, text):
 
 def print_linked_list_reverse(first_node):
     return iterate_through_list(first_node, True) + " None"
+
+
+def cast_string_list_to_integer(first_node):
+    current_node = first_node
+    output_string = str(safe_cast_to_int(current_node.item))
+    while current_node.next_node is not None:
+        current_node = current_node.next_node
+        output_string += " %s" % str(safe_cast_to_int(current_node.item))
+    return output_string
+
+
+def safe_cast_to_int(input_string):
+    try:
+        return int(input_string)
+    except:
+        return 0
