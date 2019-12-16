@@ -45,3 +45,4 @@ class NodeUnitTests(unittest.TestCase):
         int_node_list = convert_string_list_to_int_list(first_node)
         expected_int_list = Node(27, Node(0, Node(3)))
         self.assertEqual(int_node_list, expected_int_list)
+        

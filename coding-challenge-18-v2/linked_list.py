@@ -28,7 +28,8 @@ def get_description(first_node):
 def add_to_list(first_node, item_to_add):
     last_node = first_node
     while last_node.next_node is not None:
-;
+        last_node = last_node.next_node
+
     new_node = Node(item_to_add, None)
     last_node.next_node = new_node
 
