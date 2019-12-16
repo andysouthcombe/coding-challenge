@@ -7,3 +7,7 @@ class NodeUnitTests(unittest.TestCase):
         first_node = Node("Hello")
         self.assertEqual(first_node.item, "Hello")
         self.assertEqual(first_node.next_node, None)
+
+    def test_can_print_one_node(self):
+        first_node = Node("Hello")
+        self.assertEqual(print_linked_list(first_node), "Hello None")
