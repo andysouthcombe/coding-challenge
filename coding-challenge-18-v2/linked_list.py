@@ -10,7 +10,7 @@ class Node:
             return self.item + " None"
 
 
-def print_linked_list(first_node):
+def get_description(first_node):
     current_node = first_node
     output_string = ""
     while current_node is not None:
