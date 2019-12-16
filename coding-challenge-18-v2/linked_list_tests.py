@@ -16,3 +16,9 @@ class NodeUnitTests(unittest.TestCase):
         second_node = Node("World")
         first_node = Node("Hello", second_node)
         self.assertEqual(get_description(first_node), "Hello World None")
+
+    def test_add_node_to_list(self):
+        second_node = Node("World")
+        first_node = Node("Hello", second_node)
+        add_to_list(first_node, "!")
+        self.assertEqual(get_description(first_node),"Hello World ! None")
