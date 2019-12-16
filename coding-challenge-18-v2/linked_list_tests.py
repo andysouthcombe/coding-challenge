@@ -11,3 +11,8 @@ class NodeUnitTests(unittest.TestCase):
     def test_can_print_one_node(self):
         first_node = Node("Hello")
         self.assertEqual(print_linked_list(first_node), "Hello None")
+
+    def test_can_print_two_nodes(self):
+        second_node = Node("World")
+        first_node = Node("Hello", second_node)
+        self.assertEqual(print_linked_list(first_node), "Hello World None")

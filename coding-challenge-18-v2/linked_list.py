@@ -3,6 +3,17 @@ class Node:
         self.item = item
         self.next_node = next_node
 
+    def print_label(self):
+        if self.next_node is not None:
+            return self.item + " "
+        else:
+            return self.item + " None"
+
 
 def print_linked_list(first_node):
-    return first_node.item + " " + str(first_node.next_node)
+    current_node = first_node
+    output_string = ""
+    while current_node is not None:
+        output_string += current_node.print_label()
+        current_node = current_node.next_node
+    return output_string
