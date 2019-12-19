@@ -46,3 +46,13 @@ def safe_cast_str_to_int(value):
         return int(value)
     except:
         return int(0)
+
+
+def reverse(list_to_reverse, previous_node=None):
+    output_node = Node(list_to_reverse.item, previous_node)
+    next_node = list_to_reverse.next_node
+
+    if next_node is None:
+        return output_node
+    else:
+        return reverse(next_node, output_node)
