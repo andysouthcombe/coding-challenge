@@ -17,4 +17,7 @@ class ValidateCubeTests(unittest.TestCase):
 
     def test_validate_cube_throws_exception_if_any_colour_does_not_have_nine_blocks(self):
         self.assertRaises(ValueError, validate_cube,
-                          ["GGGGGGGGG", "YYYYYYYYY", "OOOOOOOOO", "RRRRRRRRR", "WWWWWWWWW", "BBBBBBBBB"])
+                          ["GGGGGGGGG", "YYYYYYYYY", "OOOOOOOOO", "RRRRRRRRR", "WWWWWWWWW", "BBBBBBBB"])
+
+    def test_validate_cube_passes_if_cube_is_valid(self):
+        self.assertTrue(validate_cube(correct_cube_input))

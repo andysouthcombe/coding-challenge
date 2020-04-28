@@ -6,7 +6,10 @@ def validate_cube(cube_to_validate):
         if len(face) != 9:
             raise ValueError("incorrect number of blocks")
 
-    count_per_colour = [[x,cube_to_validate.count(x)] for x in set(cube_to_validate)]
+    cube_to_validate_string = "".join(cube_to_validate)
+    count_per_colour = [[x, cube_to_validate_string.count(x)] for x in set(cube_to_validate_string)]
 
-    if any(colour_count != 9 for colour_count in count_per_colour):
+    if any(b != 9 for a,b in count_per_colour):
         raise ValueError("incorrect number of blocks for colour")
+
+    return True
