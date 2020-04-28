@@ -39,6 +39,11 @@ class Cube:
         return [f.print_face_as_string() for f in self.faces]
 
 
+def rotate_cube(cube_string,face_to_rotate,direction):
+    start_cube = Cube(cube_string)
+    return start_cube
+
+
 if __name__ == "__main__":
     if validate_cube(["GGGGGGGGG", "YYYYYYYYY", "OOOOOOOOO", "RRRRRRRRR", "WWWWWWWWW", "BBBBBBBBB"]):
         test_cube = Cube(["GGGGGGGGG", "YYYYYYYYY", "OOOOOOOOO", "RRRRRRRRR", "WWWWWWWWW", "BBBBBBBBB"])

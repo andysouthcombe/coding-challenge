@@ -27,4 +27,10 @@ class ValidateCubeTests(unittest.TestCase):
 class CubeTests(unittest.TestCase):
     def test_list_string_from_cube_returns_original_string(self):
         test_cube = Cube(correct_cube_input)
-        self.assertEquals(test_cube.list_cube_as_string(),correct_cube_input)
+        self.assertEquals(test_cube.list_cube_as_string(), correct_cube_input)
+
+
+class RotateCubeTests(unittest.TestCase):
+    def test_rotate_cube_returns_unchanged_front_face_when_all_blocks_the_same_colour_and_front_rotated(self):
+        rotated_cube = rotate_cube(correct_cube_input, "front", "cw")
+        self.assertEquals(rotated_cube.faces[0].print_face_as_string(), "GGGGGGGGG")
