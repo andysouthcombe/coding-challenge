@@ -46,7 +46,11 @@ def rotate_cube(cube_string, face_to_rotate, direction):
         for face in start_cube.faces:
             if face.position == face_to_rotate:
                 matrix = [face.blocks[0:3], face.blocks[3:6], face.blocks[6:]]
-                rotated_matrix = list(zip(*matrix[::-1]))
+
+                if direction == "cw":
+                    rotated_matrix = list(zip(*matrix[::-1]))
+                else:
+                    rotated_matrix = list(map(list, zip(*matrix)))[::-1]
                 rotated_face_list = [j for i in rotated_matrix for j in i]
                 new_faces.append(Face(face.position, "".join(rotated_face_list)))
             else:

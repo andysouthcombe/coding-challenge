@@ -5,6 +5,7 @@ cube_input_all_faces_one_colour = ["GGGGGGGGG", "YYYYYYYYY", "OOOOOOOOO", "RRRRR
 
 cube_input_one_block_different_colour = ["GGGGGGGGY", "YYYYYYYYG", "OOOOOOOOO", "RRRRRRRRR", "WWWWWWWWW", "BBBBBBBBB"]
 
+cube_input_multi_colours = ["GGGGGGGGG", "YYYYYYYYY", "OOOOOOWOO", "RRRRRRWRR", "WWRWOWBWW", "BBBBBBWBB"]
 
 class ValidateCubeTests(unittest.TestCase):
     def test_validate_cube_throws_exception_if_not_enough_sides(self):
@@ -35,8 +36,13 @@ class CubeTests(unittest.TestCase):
 class RotateCubeTests(unittest.TestCase):
     def test_rotate_cube_returns_unchanged_front_face_when_all_blocks_the_same_colour_and_front_rotated(self):
         rotated_cube = rotate_cube(cube_input_all_faces_one_colour, "front", "cw")
-        self.assertEqual(rotated_cube[0], "GGGGGGGGG")
+        self.assertEqual("GGGGGGGGG",rotated_cube[0])
 
     def test_rotate_cube_rotates_front_face_clockwise_when_one_block_not_same_colour(self):
         rotated_cube = rotate_cube(cube_input_one_block_different_colour, "front", "cw")
-        self.assertEqual(rotated_cube[0], "GGGGGGYGG")
+        self.assertEqual("GGGGGGYGG",rotated_cube[0])
+
+    def test_rotate_cube_rotates_top_face_anticlockwise_when_one_block_not_same_colour(self):
+        rotated_cube = rotate_cube(cube_input_multi_colours, "top", "ccw")
+        self.assertEqual("RWWWOWWWB",rotated_cube[4])
+
