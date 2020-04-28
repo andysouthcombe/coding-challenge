@@ -1,7 +1,9 @@
 import unittest
 from rotate_cube import *
 
-correct_cube_input = ["GGGGGGGGG", "YYYYYYYYY", "OOOOOOOOO", "RRRRRRRRR", "WWWWWWWWW", "BBBBBBBBB"]
+cube_input_all_faces_one_colour = ["GGGGGGGGG", "YYYYYYYYY", "OOOOOOOOO", "RRRRRRRRR", "WWWWWWWWW", "BBBBBBBBB"]
+
+cube_input_one_block_different_colour = ["GGGGGGGGY", "YYYYYYYYG", "OOOOOOOOO", "RRRRRRRRR", "WWWWWWWWW", "BBBBBBBBB"]
 
 
 class ValidateCubeTests(unittest.TestCase):
@@ -21,16 +23,20 @@ class ValidateCubeTests(unittest.TestCase):
                           ["GGGGGGGGG", "YYYYYYYYY", "OOOOOOOOO", "RRRRRRRRR", "WWWWWWWWW", "BBBBBBBB"])
 
     def test_validate_cube_passes_if_cube_is_valid(self):
-        self.assertTrue(validate_cube(correct_cube_input))
+        self.assertTrue(validate_cube(cube_input_all_faces_one_colour))
 
 
 class CubeTests(unittest.TestCase):
     def test_list_string_from_cube_returns_original_string(self):
-        test_cube = Cube(correct_cube_input)
-        self.assertEquals(test_cube.list_cube_as_string(), correct_cube_input)
+        test_cube = Cube(cube_input_all_faces_one_colour)
+        self.assertEqual(test_cube.list_cube_as_string(), cube_input_all_faces_one_colour)
 
 
 class RotateCubeTests(unittest.TestCase):
     def test_rotate_cube_returns_unchanged_front_face_when_all_blocks_the_same_colour_and_front_rotated(self):
-        rotated_cube = rotate_cube(correct_cube_input, "front", "cw")
-        self.assertEquals(rotated_cube.faces[0].print_face_as_string(), "GGGGGGGGG")
+        rotated_cube = rotate_cube(cube_input_all_faces_one_colour, "front", "cw")
+        self.assertEqual(rotated_cube[0], "GGGGGGGGG")
+
+    def test_rotate_cube_rotates_front_face_clockwise_when_one_block_not_same_colour(self):
+        rotated_cube = rotate_cube(cube_input_one_block_different_colour, "front", "cw")
+        self.assertEqual(rotated_cube[0], "GGGGGGYGG")

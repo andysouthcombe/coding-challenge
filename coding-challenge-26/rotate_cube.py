@@ -21,7 +21,7 @@ def validate_cube(cube_to_validate):
 class Face:
     def __init__(self, p, b):
         self.position = p
-        self.blocks = b.split()
+        self.blocks = list(b)
 
     def print_face_as_string(self):
         return "".join(self.blocks)
@@ -32,20 +32,30 @@ class Cube:
         f = 0
         self.faces = []
         while f < 6:
-            self.faces.append(Face([f], cube_string[f]))
+            self.faces.append(Face(face_position[f], cube_string[f]))
             f += 1
 
     def list_cube_as_string(self):
         return [f.print_face_as_string() for f in self.faces]
 
 
-def rotate_cube(cube_string,face_to_rotate,direction):
-    start_cube = Cube(cube_string)
-    return start_cube
+def rotate_cube(cube_string, face_to_rotate, direction):
+    if validate_cube(cube_string):
+        start_cube = Cube(cube_string)
+        new_faces = []
+        for face in start_cube.faces:
+            if face.position == face_to_rotate:
+                matrix = [face.blocks[0:3], face.blocks[3:6], face.blocks[6:]]
+                rotated_matrix = list(zip(*matrix[::-1]))
+                rotated_face_list = [j for i in rotated_matrix for j in i]
+                new_faces.append(Face(face.position, "".join(rotated_face_list)))
+            else:
+                new_faces.append(face)
+
+    return [f.print_face_as_string() for f in new_faces]
 
 
 if __name__ == "__main__":
-    if validate_cube(["GGGGGGGGG", "YYYYYYYYY", "OOOOOOOOO", "RRRRRRRRR", "WWWWWWWWW", "BBBBBBBBB"]):
-        test_cube = Cube(["GGGGGGGGG", "YYYYYYYYY", "OOOOOOOOO", "RRRRRRRRR", "WWWWWWWWW", "BBBBBBBBB"])
+    face = Face("top", "GYRGGGGGG")
 
-        print(test_cube.print_cube_as_string())
+    print(face.blocks[3:5])
