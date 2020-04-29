@@ -73,7 +73,7 @@ def rotate_cube(cube_string, face_to_rotate, direction):
 
 
 def get_blocks_to_shuffle_to_and_from(face_to_rotate, face_to_shuffle, direction):
-    if direction == "cw":
+    if direction == "ccw":
         shuffle_order = adjacent_faces_to_shuffle[face_to_rotate]
     else:
         shuffle_order = list(reversed(adjacent_faces_to_shuffle[face_to_rotate]))
@@ -81,6 +81,10 @@ def get_blocks_to_shuffle_to_and_from(face_to_rotate, face_to_shuffle, direction
     for index, face in enumerate(shuffle_order):
         if face[0] == face_to_shuffle:
             return face, shuffle_order[(index + 1) % 4]
+
+
+def get_shuffled_face(start_cube,face_to_rotate, face_to_shuffle, direction):
+    faces_to_shuffle_from_and_to = get_blocks_to_shuffle_to_and_from
 
 
 if __name__ == "__main__":
