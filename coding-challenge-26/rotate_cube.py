@@ -1,4 +1,12 @@
 face_position = {0: "front", 1: "back", 2: "left", 3: "right", 4: "top", 5: "bottom"}
+adjacent_faces_to_shuffle = {
+    "front": [("top", [7, 8, 9]), ("right", [1, 4, 7]), ("bottom", [1, 2, 3]), ("left", [7, 8, 9])],
+    "back": ["top", "left", "bottom", "right"],
+    "left": ["top", "front", "bottom", "back"],
+    "right": ["top", "back", "bottom", "front"],
+    "top": ["back", "right", "front", "left"],
+    "bottom": ["front", "right", "back", "left"]
+}
 
 
 def validate_cube(cube_to_validate):
@@ -38,11 +46,16 @@ class Cube:
     def list_cube_as_string(self):
         return [f.print_face_as_string() for f in self.faces]
 
+    def get_face_by_position_name(self, face_to_get):
+        return [f for f in self.faces if f.position == face_to_get][0]
+
 
 def rotate_cube(cube_string, face_to_rotate, direction):
     if validate_cube(cube_string):
         start_cube = Cube(cube_string)
         new_faces = []
+        faces_to_shuffle = adjacent_faces_to_shuffle["face_to_rotate"]
+
         for face in start_cube.faces:
             if face.position == face_to_rotate:
                 matrix = [face.blocks[0:3], face.blocks[3:6], face.blocks[6:]]
@@ -59,7 +72,14 @@ def rotate_cube(cube_string, face_to_rotate, direction):
     return [f.print_face_as_string() for f in new_faces]
 
 
-if __name__ == "__main__":
-    face = Face("top", "GYRGGGGGG")
+# def shuffle_face(start_cube, face_to_rotate, face_to_shuffle, direction):
+#     if any(a == face_to_shuffle for a, b in adjacent_faces_to_shuffle[face_to_rotate]):
+#
+#     else:
+#         return start_cube.faces[face_to_shuffle]
 
-    print(face.blocks[3:5])
+
+if __name__ == "__main__":
+    cube_input_all_faces_one_colour = ["GGGGGGGGG", "YYYYYYYYY", "OOOOOOOOO", "RRRRRRRRR", "WWWWWWWWW", "BBBBBBBBB"]
+    test_cube = Cube(cube_input_all_faces_one_colour)
+    print(test_cube.faces["top"])

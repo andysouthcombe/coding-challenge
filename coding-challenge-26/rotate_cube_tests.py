@@ -7,6 +7,7 @@ cube_input_one_block_different_colour = ["GGGGGGGGY", "YYYYYYYYG", "OOOOOOOOO", 
 
 cube_input_multi_colours = ["GGGGGGGGG", "YYYYYYYYY", "OOOOOOWOO", "RRRRRRWRR", "WWRWOWBWW", "BBBBBBWBB"]
 
+
 class ValidateCubeTests(unittest.TestCase):
     def test_validate_cube_throws_exception_if_not_enough_sides(self):
         self.assertRaises(ValueError, validate_cube, ["GGGGGGGGG", "YYYYYYYYY", "OOOOOOOOO", "RRRRRRRR", "WWWWWWWWWWW"])
@@ -32,17 +33,28 @@ class CubeTests(unittest.TestCase):
         test_cube = Cube(cube_input_all_faces_one_colour)
         self.assertEqual(test_cube.list_cube_as_string(), cube_input_all_faces_one_colour)
 
+    def test_get_face_by_position_name_returns_face(self):
+        test_cube = Cube(cube_input_all_faces_one_colour)
+        expected_face = Face("left", "OOOOOOOOO")
+        self.assertEqual(expected_face.print_face_as_string(),
+                         test_cube.get_face_by_position_name("left").print_face_as_string())
+
 
 class RotateCubeTests(unittest.TestCase):
     def test_rotate_cube_returns_unchanged_front_face_when_all_blocks_the_same_colour_and_front_rotated(self):
         rotated_cube = rotate_cube(cube_input_all_faces_one_colour, "front", "cw")
-        self.assertEqual("GGGGGGGGG",rotated_cube[0])
+        self.assertEqual("GGGGGGGGG", rotated_cube[0])
 
     def test_rotate_cube_rotates_front_face_clockwise_when_one_block_not_same_colour(self):
         rotated_cube = rotate_cube(cube_input_one_block_different_colour, "front", "cw")
-        self.assertEqual("GGGGGGYGG",rotated_cube[0])
+        self.assertEqual("GGGGGGYGG", rotated_cube[0])
 
-    def test_rotate_cube_rotates_top_face_anticlockwise_when_one_block_not_same_colour(self):
+    def test_rotate_cube_rotates_top_face_anticlockwise(self):
         rotated_cube = rotate_cube(cube_input_multi_colours, "top", "ccw")
-        self.assertEqual("RWWWOWWWB",rotated_cube[4])
+        self.assertEqual("RWWWOWWWB", rotated_cube[4])
 
+    # def test_rotate_cube_rotates_front_face_clockwise__and_shuffles_adjacent_sides(self):
+    #     #expected_cube = ["GGGGGGYGG", "YYYYYYYYG", "OOOOOOOOO", "RRRRRRRRR", "WWWWWWWWW", "BBBBBBBBB"]
+    #     expected_cube = ["GGGGGGYGG", "YYYYYYYYG", "OOOOOOBBB", "RRRRRRWWW", "WWWWWWOOO", "BBBBBBWWW"]
+    #     rotated_cube = rotate_cube(cube_input_one_block_different_colour, "front", "cw")
+    #     self.assertEqual(expected_cube,rotated_cube)
