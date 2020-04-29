@@ -70,7 +70,7 @@ class RotateCubeTests(unittest.TestCase):
         self.assertEqual("RWWWOWWWB", rotated_cube[4])
 
     def test_rotate_cube_rotates_front_face_clockwise_and_shuffles_adjacent_sides(self):
-        #expected_cube = ["GGGGGGYGG", "YYYYYYYYG", "OOOOOOOOO", "RRRRRRRRR", "WWWWWWWWW", "BBBBBBBBB"]
-        expected_cube = ["GGGGGGYGG", "YYYYYYYYG", "OOOOOOBBB", "RRRRRRWWW", "WWWWWWOOO", "BBBBBBWWW"]
+        #               ["GGGGGGGGY", "YYYYYYYYG", "OOOOOOOOO", "RRRRRRRRR", "WWWWWWWWW", "BBBBBBBBB"]
+        expected_cube = ["GGGGGGYGG", "YYYYYYYYG", "OOBOOBOOB", "WRRWRRWRR", "WWWWWWOOO", "RRRBBBBBB"]
         rotated_cube = rotate_cube(cube_input_one_block_different_colour, "front", "cw")
         self.assertEqual(expected_cube,rotated_cube)
