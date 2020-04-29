@@ -40,6 +40,22 @@ class CubeTests(unittest.TestCase):
                          test_cube.get_face_by_position_name("left").print_face_as_string())
 
 
+class TestGetBlocksToShuffleFromAndTo(unittest.TestCase):
+    def test_get_blocks_to_shuffle_from_and_to_front_face_rotating_clockwise_shuffles_top_face(self):
+        expected_pair = (("top", [6, 7, 8]), ("right", [0, 3, 6]))
+        self.assertEqual(expected_pair, get_blocks_to_shuffle_to_and_from("front", "top", "cw"))
+
+    def test_get_blocks_to_shuffle_from_and_to_front_face_rotating_clockwise_shuffles_left_face(self):
+        expected_pair = (("left", [6, 7, 8]), ("top", [6, 7, 8]))
+        self.assertEqual(expected_pair, get_blocks_to_shuffle_to_and_from("front", "left", "cw"))
+
+    def test_get_blocks_to_shuffle_from_and_to_front_face_rotating_anti_clockwise_shuffles_left_face(self):
+        expected_pair = (("left", [6, 7, 8]), ("bottom", [0, 1, 2]))
+        self.assertEqual(expected_pair, get_blocks_to_shuffle_to_and_from("front", "left", "ccw"))
+
+
+
+
 class RotateCubeTests(unittest.TestCase):
     def test_rotate_cube_returns_unchanged_front_face_when_all_blocks_the_same_colour_and_front_rotated(self):
         rotated_cube = rotate_cube(cube_input_all_faces_one_colour, "front", "cw")
