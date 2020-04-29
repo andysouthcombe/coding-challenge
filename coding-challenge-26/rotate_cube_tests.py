@@ -41,15 +41,15 @@ class CubeTests(unittest.TestCase):
 
 
 class TestGetBlocksToShuffleFromAndTo(unittest.TestCase):
-    def test_get_blocks_to_shuffle_from_and_to_front_face_rotating_clockwise_shuffles_top_face(self):
+    def test_get_blocks_to_shuffle_to_and_from_front_face_rotating_clockwise_shuffles_top_face(self):
         expected_pair = (("top", [6, 7, 8]), ("right", [0, 3, 6]))
         self.assertEqual(expected_pair, get_blocks_to_shuffle_to_and_from("front", "top", "cw"))
 
-    def test_get_blocks_to_shuffle_from_and_to_front_face_rotating_clockwise_shuffles_left_face(self):
+    def test_get_blocks_to_shuffle_to_and_from_front_face_rotating_clockwise_shuffles_left_face(self):
         expected_pair = (("left", [6, 7, 8]), ("top", [6, 7, 8]))
         self.assertEqual(expected_pair, get_blocks_to_shuffle_to_and_from("front", "left", "cw"))
 
-    def test_get_blocks_to_shuffle_from_and_to_front_face_rotating_anti_clockwise_shuffles_left_face(self):
+    def test_get_blocks_to_shuffle_to_and_from_front_face_rotating_anti_clockwise_shuffles_left_face(self):
         expected_pair = (("left", [6, 7, 8]), ("bottom", [0, 1, 2]))
         self.assertEqual(expected_pair, get_blocks_to_shuffle_to_and_from("front", "left", "ccw"))
 
