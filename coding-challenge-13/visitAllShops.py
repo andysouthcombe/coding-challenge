@@ -116,6 +116,6 @@ gmap3.scatter(latitude_list, longitude_list, '# FF0000',
 gmap3.plot(latitude_list, longitude_list,
             'cornflowerblue', edge_width=2.5)
 
-gmap3.apikey = 'AIzaSyDn0V6fIlJVwkzUr60Vx7ka1UxGBBDwBoo'
+gmap3.apikey = ''
 
 gmap3.draw("C:\\temp\\map13.html")
